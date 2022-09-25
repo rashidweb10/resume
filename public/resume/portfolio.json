@@ -1,0 +1,110 @@
+[
+    {
+      "id": 1,
+      "name": "Rashid CV",
+      "website": "rashidweb.gnbags.in",
+      "image": "/resume/img/projects/rashidweb.jpg",
+      "stacks": "VueJS",
+      "software_desc_1": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+      "learn": [
+        {"id": 1, "content": "-"}
+      ],
+      "date": "20 September 2022"
+    },
+    {
+      "id": 2,
+      "name": "LMS",
+      "website": "-",
+      "image": "/resume/img/projects/default-1.jpg",
+      "stacks": "Codeignitor",
+      "software_desc_1": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+      "learn": [
+        {"id": 1, "content": "-"}
+      ],
+      "date": "01 September 2020"
+    },
+    {
+      "id": 3,
+      "name": "MLM & Ecommerce App",
+      "website": "-",
+      "image": "/resume/img/projects/default-1.jpg",
+      "stacks": "Codeigniter",
+      "software_desc_1": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+      "learn": [
+        {"id": 1, "content": "-"}
+      ],
+      "date": "10 January 2021"
+    },
+    {
+      "id": 4,
+      "name": "Chat App {Ecommerce}",
+      "website": "-",
+      "image": "/resume/img/projects/default-1.jpg",
+      "stacks": "Codeigniter",
+      "software_desc_1": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+      "learn": [
+        {"id": 1, "content": "-"}
+      ],
+      "date": "10 January 2021"
+    },
+    {
+      "id": 5,
+      "name": "iBilling Software",
+      "website": "-",
+      "image": "/resume/img/projects/default-1.jpg",
+      "stacks": "PHP",
+      "software_desc_1": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+      "learn": [
+        {"id": 1, "content": "-"}
+      ],
+      "date": "10 January 2021"
+    },
+    {
+      "id": 6,
+      "name": "Online retailers {Ecommerce}",
+      "website": "-",
+      "image": "/resume/img/projects/default-1.jpg",
+      "stacks": "Laravel",
+      "software_desc_1": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+      "learn": [
+        {"id": 1, "content": "-"}
+      ],
+      "date": "10 January 2021"
+    },
+    {
+      "id": 7,
+      "name": "Lawyer Firm Web App",
+      "website": "gnbags.in",
+      "image": "/resume/img/projects/default-1.jpg",
+      "stacks": "Codeignitor",
+      "software_desc_1": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+      "learn": [
+        {"id": 1, "content": "-"}
+      ],
+      "date": "19 August 2019"
+    },
+    {
+      "id": 8,
+      "name": "CRM",
+      "website": "gnbags.in",
+      "image": "/resume/img/projects/default-1.jpg",
+      "stacks": "Codeignitor",
+      "software_desc_1": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+      "learn": [
+        {"id": 1, "content": "-"}
+      ],
+      "date": "19 August 2019"
+    },   
+    {
+      "id": 9,
+      "name": "G.N Bags",
+      "website": "gnbags.in",
+      "image": "/resume/img/projects/gnbags.jpg",
+      "stacks": "Wordpress",
+      "software_desc_1": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+      "learn": [
+        {"id": 1, "content": "-"}
+      ],
+      "date": "19 August 2019"
+    }           
+]
