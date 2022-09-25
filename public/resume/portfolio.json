@@ -1,7 +1,7 @@
 [
     {
       "id": 1,
-      "name": "Rashid CV",
+      "name": "Resume SPA",
       "website": "rashidweb.gnbags.in",
       "image": "/resume/img/projects/rashidweb.jpg",
       "stacks": "VueJS",
@@ -9,7 +9,7 @@
       "learn": [
         {"id": 1, "content": "-"}
       ],
-      "date": "20 September 2022"
+      "date": "2022 - Present"
     },
     {
       "id": 2,
@@ -21,7 +21,7 @@
       "learn": [
         {"id": 1, "content": "-"}
       ],
-      "date": "01 September 2020"
+      "date": "2020 - Present"
     },
     {
       "id": 3,
@@ -33,7 +33,7 @@
       "learn": [
         {"id": 1, "content": "-"}
       ],
-      "date": "10 January 2021"
+      "date": "2020 - 2021"
     },
     {
       "id": 4,
@@ -45,7 +45,7 @@
       "learn": [
         {"id": 1, "content": "-"}
       ],
-      "date": "10 January 2021"
+      "date": "2021 - 2022"
     },
     {
       "id": 5,
@@ -57,7 +57,7 @@
       "learn": [
         {"id": 1, "content": "-"}
       ],
-      "date": "10 January 2021"
+      "date": "2021 - Present"
     },
     {
       "id": 6,
@@ -69,7 +69,7 @@
       "learn": [
         {"id": 1, "content": "-"}
       ],
-      "date": "10 January 2021"
+      "date": "2022"
     },
     {
       "id": 7,
@@ -81,7 +81,7 @@
       "learn": [
         {"id": 1, "content": "-"}
       ],
-      "date": "19 August 2019"
+      "date": "2019 - 2021"
     },
     {
       "id": 8,
@@ -93,7 +93,7 @@
       "learn": [
         {"id": 1, "content": "-"}
       ],
-      "date": "19 August 2019"
+      "date": "2020"
     },   
     {
       "id": 9,
@@ -105,6 +105,6 @@
       "learn": [
         {"id": 1, "content": "-"}
       ],
-      "date": "19 August 2019"
+      "date": "2019 - Present"
     }           
 ]
