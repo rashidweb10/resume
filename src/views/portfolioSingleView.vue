@@ -34,13 +34,13 @@
                 </div>
             </li>
             <!-- Date -->
-            <li class="details-info__item">
+            <!--<li class="details-info__item">
                 <span class="box box--s2 icon-box"><i class="fas fa-calendar-alt"></i></span>
                 <div class="details-info__info">
                     <span class="overhead">Date</span>
                     {{singleWork.date}}
                 </div>
-            </li>
+            </li>-->
         </ul>
 
         <h5>Project Description</h5>
