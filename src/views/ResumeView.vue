@@ -120,7 +120,7 @@
         <div class="case-item box box--s2 box-inner">
           <img
             class="case-item__icon"
-            :src="'/resume/img/skills/' + certificate.image"
+            :src="certificate.image"
             alt=""
           />
           <div>
@@ -205,22 +205,28 @@ export default {
         { id: 3, title: "Urdu", percentage: "85" },
       ],
       myCertifications: [
-        {
+      {
           id: 1,
-          name: "cPanel & WHM Administrator",
-          image: "cpanel.png",
-          url: "https://university.cpanel.net/user/401041",
-        },
+          name: "Web Application Developer",
+          image: "/resume/img/skills/mak-logo-1.png",
+          url: "/resume/img/skills/web-application-developer-certificate-2022-1.jpg",
+        }, 
         {
           id: 2,
           name: "VueJS Developer Course",
-          image: "vuejs.png",
+          image: "/resume/img/skills/vuejs.png",
           url: "https://s3-ap-southeast-1.amazonaws.com/learnyst/schools/2410/certificates/92665/6717859_92665.pdf?1662301098",
-        },
+        },               
         {
           id: 3,
-          name: "UI / UX Web Design",
-          image: "mak-logo.png",
+          name: "cPanel & WHM Administrator",
+          image: "/resume/img/skills/cpanel.png",
+          url: "https://university.cpanel.net/user/401041",
+        },
+        {
+          id: 4,
+          name: "UI / UX Web Designer",
+          image: "/resume/img/skills/mak-logo-1.png",
           url: "/resume/img/skills/ui-ux-web-designer-certificate.jpg",
         },
       ],

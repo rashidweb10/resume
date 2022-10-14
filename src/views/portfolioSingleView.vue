@@ -18,13 +18,21 @@
 
         <ul class="details-info details-info--inline">
             <!-- Client -->
-            <li class="details-info__item">
+            <!--<li class="details-info__item">
                 <span class="box box--s2 icon-box"><i class="far fa-link"></i></span>
                 <div class="details-info__info">
                     <span class="overhead">Web Address</span>
                     <span><a :href="'http://' + singleWork.website" target="_blank">{{singleWork.website}}</a></span>
                 </div>
-            </li>
+            </li>-->
+            <!-- Role -->
+            <li class="details-info__item">
+                <span class="box box--s2 icon-box"><i class="fas fa-user-alt"></i></span>
+                <div class="details-info__info">
+                    <span class="overhead">Role</span>
+                    {{singleWork.role}}
+                </div>
+            </li>            
             <!-- Category -->
             <li class="details-info__item">
                 <span class="box box--s2 icon-box"><i class="far fa-code"></i></span>
@@ -33,21 +41,13 @@
                     <span>{{singleWork.stacks}}</span>
                 </div>
             </li>
-            <!-- Date -->
-            <!--<li class="details-info__item">
-                <span class="box box--s2 icon-box"><i class="fas fa-calendar-alt"></i></span>
-                <div class="details-info__info">
-                    <span class="overhead">Date</span>
-                    {{singleWork.date}}
-                </div>
-            </li>-->
         </ul>
 
-        <h5>Project Description</h5>
-        <p>{{singleWork.software_desc_1}}</p>
+        <!--<h5>Project Description</h5>
+        <p><span v-html="singleWork.software_desc_1"></span> </p>-->
 
-        <h5>My Experience</h5>
-        <p v-for="learn in singleWork.learn" :key="learn.id">{{learn.content}}</p>        
+        <h5 class="mb-3">My Experience</h5>
+        <p class="mb-2" v-for="learn in singleWork.learn" :key="learn.id"><i class="fa-solid fa-check"></i> {{learn.content}}</p>        
 
     </div>
 </template>

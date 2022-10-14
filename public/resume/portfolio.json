@@ -4,60 +4,84 @@
       "name": "Resume SPA",
       "website": "rashidweb.gnbags.in",
       "image": "/resume/img/projects/rashidweb.jpg",
-      "stacks": "VueJS",
-      "software_desc_1": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+      "stacks": "Vue 3 / Javascript / Html 5 / Bootstrap 5 / JSON / CSS 3",
+      "software_desc_1": "This is the first application that I have built in VueJS. This application aims to show My experience, recent work & other professional information.",
       "learn": [
-        {"id": 1, "content": "-"}
+        {"id": 1, "content": "Learned dynamic routing."},
+        {"id": 2, "content": "Worked with navigation guard feature."},
+        {"id": 3, "content": "Worked with componenets."},
+        {"id": 4, "content": "Learned lifecycle events."},
+        {"id": 5, "content": "Worked with functions & methods."},
+        {"id": 6, "content": "Data rendering from server side."},
+        {"id": 7, "content": "Forms data collection & validation using data binding & form submission using Axios package."},
+        {"id": 8, "content": "Deployment on production server."}
       ],
-      "date": "2022 - Present"
+      "role": "Solo"
     },
     {
       "id": 2,
       "name": "LMS",
       "website": "-",
       "image": "/resume/img/projects/default-1.jpg",
-      "stacks": "Codeignitor",
-      "software_desc_1": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+      "stacks": "Codeignitor / PHP / MySQL / jQuery / JSON / Html /  CSS / Bootstrap",
+      "software_desc_1": "It's a customized Learning Management System with a lot of features like secure video streaming, social media logins, customized student enrollments for regular & In-house students, Call / SMS / Whatsapp / Email integrations, E-commerce features & much more.",
       "learn": [
-        {"id": 1, "content": "-"}
+        {"id": 1, "content": "Integrated Social media API for login & registration (Google/LinkedIn/Facebook)."},
+        {"id": 2, "content": "Integrated VdoCipher API for secure video streaming."},
+        {"id": 3, "content": "Integrated Twilio / Sendblue / Wati for SMS & calls."},
+        {"id": 4, "content": "Developed crud modules according to the client need."},
+        {"id": 5, "content": "Integrated E-commerce features from scratch like Buy Now, Payment Gateway, Notifications, Webhooks, etc."},
+        {"id": 6, "content": "Developed a detailed watch history of a student as per client need."},
+        {"id": 6, "content": "Maintaining this application from 2020 to till Now."}
       ],
-      "date": "2020 - Present"
+      "role": "Team Member"
     },
     {
       "id": 3,
       "name": "MLM & Ecommerce App",
       "website": "-",
       "image": "/resume/img/projects/default-1.jpg",
-      "stacks": "Codeigniter",
-      "software_desc_1": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+      "stacks": "Codeignitor / PHP / MySQL / jQuery / JSON / Html /  CSS / Bootstrap",
+      "software_desc_1": "A Multi-level Marketing Application that became a large scale E-commerce website with millions of database records.",
       "learn": [
-        {"id": 1, "content": "-"}
+        {"id": 1, "content": "Developed crud modules that meets client requirement."},
+        {"id": 2, "content": "Wrote highly optimize queries that balance MySQL database tables."},
+        {"id": 3, "content": "Integrated ICICI payment gateway API."},
+        {"id": 4, "content": "Integrated Document verification APIs."},
+        {"id": 5, "content": "Developed an E-commerce website & connect with an MLM application."},
+        {"id": 7, "content": "It is the Large scale application of my career in which I have worked."}
       ],
-      "date": "2020 - 2021"
+      "role": "Team Member"
     },
     {
       "id": 4,
       "name": "Chat App {Ecommerce}",
       "website": "-",
       "image": "/resume/img/projects/default-1.jpg",
-      "stacks": "Codeigniter",
-      "software_desc_1": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+      "stacks": "Codeignitor / PHP / MySQL / jQuery / JSON / Html /  CSS / Bootstrap",
+      "software_desc_1": "A social media buying & selling E-commerce application that is fully based on Chat.",
       "learn": [
-        {"id": 1, "content": "-"}
+        {"id": 1, "content": "Learned & implemented web scraping to fetch users profile from Instagram, Facebook, Youtube, Telegram & twitter."},
+        {"id": 2, "content": "Developed single & group chatrooms."},
+        {"id": 3, "content": "Integrated ICICI payment gateway."},
+        {"id": 4, "content": "Integrated Stripe 2D payment gateway."},
+        {"id": 5, "content": "Developed crud modules that meets client requirement."}
       ],
-      "date": "2021 - 2022"
+      "role": "Team Member"
     },
     {
       "id": 5,
-      "name": "iBilling Software",
+      "name": "Billing Application",
       "website": "-",
       "image": "/resume/img/projects/default-1.jpg",
-      "stacks": "PHP",
-      "software_desc_1": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+      "stacks": "PHP / MySQL / jQuery / JSON / Html / CSS / Bootstrap",
+      "software_desc_1": "A purchased billing application that is used to designed & developed as per the client's need.",
       "learn": [
-        {"id": 1, "content": "-"}
+        {"id": 1, "content": "Developed crud modules for Recruitment companies."},
+        {"id": 2, "content": "Developed crud modules for Garment maker companies."},
+        {"id": 3, "content": "Developed crud modules for Retails stores."}
       ],
-      "date": "2021 - Present"
+      "role": "Team Member"
     },
     {
       "id": 6,
@@ -69,42 +93,42 @@
       "learn": [
         {"id": 1, "content": "-"}
       ],
-      "date": "2022"
+      "role": "Solo"
     },
     {
       "id": 7,
       "name": "Lawyer Firm Web App",
-      "website": "gnbags.in",
+      "website": "-",
       "image": "/resume/img/projects/default-1.jpg",
       "stacks": "Codeignitor",
       "software_desc_1": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
       "learn": [
         {"id": 1, "content": "-"}
       ],
-      "date": "2019 - 2021"
+      "role": "Solo"
     },
     {
       "id": 8,
       "name": "CRM",
-      "website": "gnbags.in",
+      "website": "-",
       "image": "/resume/img/projects/default-1.jpg",
       "stacks": "Codeignitor",
       "software_desc_1": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
       "learn": [
         {"id": 1, "content": "-"}
       ],
-      "date": "2020"
+      "role": "Solo"
     },   
     {
       "id": 9,
-      "name": "G.N Bags",
-      "website": "gnbags.in",
-      "image": "/resume/img/projects/gnbags.jpg",
-      "stacks": "Wordpress",
+      "name": "Slaughter App",
+      "website": "-",
+      "image": "/resume/img/projects/default-1.jpg",
+      "stacks": "Codeignitor",
       "software_desc_1": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
       "learn": [
         {"id": 1, "content": "-"}
       ],
-      "date": "2019 - Present"
+      "role": "Solo"
     }           
 ]
