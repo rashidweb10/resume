@@ -7,8 +7,7 @@
 
     <!-- About -->
     <BreadcrumbInner :titleData="'Resume'"></BreadcrumbInner>
-
-
+    
     <div class="row">
       <div class="col-12 col-lg-7">
         <!-- Education -->
@@ -118,13 +117,11 @@
         class="col-12 col-lg-6"
       >
         <div class="case-item box box--s2 box-inner">
-          <img
-            class="case-item__icon"
-            :src="certificate.image"
-            alt=""
-          />
+          <img class="case-item__icon" :src="certificate.image" alt="" />
           <div>
-            <h3 class="title title--h3" style="margin-top:-4px;">{{ certificate.name }}</h3>
+            <h3 class="title title--h3" style="margin-top: -4px">
+              {{ certificate.name }}
+            </h3>
             <p class="case-item__caption">
               <a :href="certificate.url" target="_blank"
                 >See Credential
@@ -204,19 +201,24 @@ export default {
         { id: 2, title: "Hindi", percentage: "80" },
         { id: 3, title: "Urdu", percentage: "85" },
       ],
-      myCertifications: [
-      {
+      myCertifications: null,
+    };
+  },
+  methods: {
+    loadMyCertifications() {
+      this.myCertifications = [
+        {
           id: 1,
           name: "Web Application Developer",
           image: "/resume/img/skills/mak-logo-1.png",
           url: "/resume/img/skills/web-application-developer-certificate-2022-1.jpg",
-        }, 
+        },
         {
           id: 2,
           name: "VueJS Developer Course",
           image: "/resume/img/skills/vuejs.png",
           url: "https://s3-ap-southeast-1.amazonaws.com/learnyst/schools/2410/certificates/92665/6717859_92665.pdf?1662301098",
-        },               
+        },
         {
           id: 3,
           name: "cPanel & WHM Administrator",
@@ -229,12 +231,15 @@ export default {
           image: "/resume/img/skills/mak-logo-1.png",
           url: "/resume/img/skills/ui-ux-web-designer-certificate.jpg",
         },
-      ],
-    };
+      ];
+    },
+  },
+  mounted() {
+    this.loadMyCertifications();
   },
   components: {
     NavigationMain,
-    BreadcrumbInner
-},
+    BreadcrumbInner,
+  },
 };
 </script>

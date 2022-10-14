@@ -56,7 +56,7 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from) => {
-  document.title = 'Rashid - ' + to.name.toLowerCase();
+  document.title = 'Rashid | ' + to.name.toLowerCase();
 })
 
 export default router
