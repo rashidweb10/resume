@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import NProgress from 'nprogress'
 import HomeView from '../views/HomeView.vue'
 import ResumeView from '../views/ResumeView.vue'
 import PortfolioView from '../views/PortfolioView.vue'
@@ -72,6 +73,17 @@ router.beforeEach((to, from) => {
     document.title = 'Rashid | ' + to.meta.title;
   }
   
+})
+
+router.beforeResolve((to, from, next) => {
+  if (to.name) {
+      NProgress.start()
+  }
+  next()
+})
+
+router.afterEach((to, from) => {
+  NProgress.done()
 })
 
 export default router
