@@ -13,7 +13,7 @@
         :key="work.id"
         class="col-md-4 text-center"
       >
-      <RouterLink :to="'/project/' + work.id">
+      <RouterLink :to="'/project/' + makeReadableURL(work.name) + '/' + work.id">
         <img class="rounded" :src="work.image" />
         <h6 class="mt-2 mb-4">{{ work.name }}</h6>
       </RouterLink>
@@ -46,6 +46,10 @@ export default {
       //console.log(result.data);
       this.recentWork = result.data
     })      
+    },
+    makeReadableURL(param)
+    {
+      return param.replace(' ', "-");
     }
   }
 };

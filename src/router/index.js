@@ -11,7 +11,8 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: HomeView
+      component: HomeView,
+      meta: { title: "Home" }
     },
     /*{
       path: '/about',
@@ -24,7 +25,8 @@ const router = createRouter({
     {
       path: '/resume',
       name: 'resume',
-      component: ResumeView
+      meta: { title: "Resume" },
+      component: () => import('../views/ResumeView.vue')
     }, 
     /*{
       path: '/portfolio',
@@ -34,14 +36,16 @@ const router = createRouter({
     {
       path: '/recent-work',
       name: 'portfolio',
+      meta: { title: "Recent Work" },
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/PortfolioView.vue')
     }, 
     {
-      path: '/project/:id',
+      path: '/project/:slug/:id',
       name: 'portfolioSingle',
+      meta: { title: "Project Detail" },
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
@@ -50,13 +54,24 @@ const router = createRouter({
     {
       path: '/contact',
       name: 'contact',
+      meta: { title: "Contact" },
       component: ContactView
     },    
   ]
 })
 
 router.beforeEach((to, from) => {
-  document.title = 'Rashid | ' + to.name.toLowerCase();
+  //console.log(to.params.slug);
+  
+  if(to.params.slug)
+  {
+    document.title = 'Rashid | ' + to.params.slug.replace('-', ' ');
+  }
+  else
+  {
+    document.title = 'Rashid | ' + to.meta.title;
+  }
+  
 })
 
 export default router

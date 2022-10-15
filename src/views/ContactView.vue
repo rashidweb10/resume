@@ -8,7 +8,7 @@
     <!-- About -->
     <BreadcrumbInner :titleData="'Contact Me'"></BreadcrumbInner>
 
-    <form v-on:submit="sendEnquiry" method="post">
+    <form v-on:submit="sendEnquiry" method="post" autocomplete="off">
       <div class="row">
         <div class="form-group col-12 col-md-6">
           <input
@@ -18,7 +18,7 @@
             name="name"
             placeholder="Full name"
             required="required"
-            autocomplete="on"
+            autocomplete="off"
           />
           <div class="help-block with-errors"></div>
         </div>
@@ -30,7 +30,7 @@
             name="email"
             placeholder="Email address"
             required="required"
-            autocomplete="on"
+            autocomplete="off"
           />
         </div>
         <div class="form-group col-12 col-md-12">
