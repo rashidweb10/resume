@@ -233,7 +233,7 @@ export default {
         },
       ];
 
-      this.myCertifications = [];
+      //this.myCertifications = [];
     },
     viewCredential(url)
     {
