@@ -5,6 +5,7 @@ import ResumeView from '../views/ResumeView.vue'
 import PortfolioView from '../views/PortfolioView.vue'
 import PortfolioSingleView from '../views/PortfolioSingleView.vue'
 import ContactView from '../views/ContactView.vue'
+import PageNotFound from '../views/PageNotFound.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -57,12 +58,18 @@ const router = createRouter({
       name: 'contact',
       meta: { title: "Contact" },
       component: ContactView
-    },    
+    }, 
+    {
+      path: '/404',
+      name: '404',
+      component: PageNotFound,
+      meta: { title: "PageNotFound" }
+    },       
   ]
 })
 
 router.beforeEach((to, from) => {
-  //console.log(to.params.slug);
+  console.log(to);
   
   if(to.params.slug)
   {
@@ -71,6 +78,11 @@ router.beforeEach((to, from) => {
   else
   {
     document.title = 'Rashid | ' + to.meta.title;
+  }
+
+  if(!to.name)
+  {
+    router.push("404")
   }
   
 })

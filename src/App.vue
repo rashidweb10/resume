@@ -58,7 +58,7 @@ export default {
             <!-- Email -->
             <li class="details-info__item">
               <span class="box box--s2 icon-box"
-                ><i class="fa-regular fa-envelope"></i
+                ><i class="fa-regular fa-at"></i
               ></span>
               <div class="contacts-block__info">
                 <span class="overhead">Email</span>
@@ -73,12 +73,17 @@ export default {
             <!-- Phone -->
             <li class="details-info__item">
               <span class="box box--s2 icon-box"
-                ><i class="fa-solid fa-phone"></i
+                ><i class="fa-regular fa-phone"></i
               ></span>
               <div class="contacts-block__info">
                 <span class="overhead">Phone</span>
                 <span class="text-overflow" title="+91-9930377481"
-                  >+91-9930377481</span
+                  ><a
+                    class="text-overflow"
+                    href="tel:+919930377481"
+                    title="+91-9930377481"
+                    >+91-9930377481</a
+                  ></span
                 >
               </div>
             </li>

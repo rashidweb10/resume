@@ -1310,7 +1310,7 @@ button:focus {
           align-items: center;
   margin-bottom: 1.75rem;
   text-overflow: ellipsis;
-  white-space: nowrap;
+  white-space: unset; /*nowrap*/
 }
 
 .details-info__item > * {
