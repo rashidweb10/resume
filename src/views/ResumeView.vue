@@ -232,6 +232,8 @@ export default {
           url: "/resume/img/skills/ui-ux-web-designer-certificate.jpg",
         },
       ];
+
+      this.myCertifications = [];
     },
     viewCredential(url)
     {

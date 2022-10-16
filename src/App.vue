@@ -30,17 +30,18 @@ export default {
       <div class="sidebar box-outer sticky-column" style="">
         <!-- My photo -->
         <div class="sidebar__base-info">
-          <figure class="avatar-box">
-            <img
-              src="/resume/img/Muhammed_rashid.jpg"
-              alt="Ricardo Black"
-            />
-          </figure>
+          <RouterLink to="/">
+            <figure class="avatar-box">
+              <img src="/resume/img/Muhammed_rashid.jpg" alt="Ricardo Black" />
+            </figure>
+          </RouterLink>
 
-          <div class="text-xl-center">
-            <h3 class="title title--h3 sidebar__name">Muhammed Rashid</h3>
-            <div class="badge">Fullstack Developer</div>
-          </div>
+          <RouterLink to="/">
+            <div class="text-xl-center">
+              <h3 class="title title--h3 sidebar__name">Muhammed Rashid</h3>
+              <div class="badge">Fullstack Developer</div>
+            </div>
+          </RouterLink>
 
           <button
             class="btn btn--small btn--icon-right sidebar__btn js-btn-toggle"

@@ -59,6 +59,7 @@
 import NavigationMain from "../components/navigation/NavigationMain.vue";
 import BreadcrumbInner from "../components/breadcrumb/BreadcrumbInner.vue";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 export default {
   data() {
@@ -74,13 +75,8 @@ export default {
     sendEnquiry: function (e) {
       e.preventDefault();
 
-      //collect form data
-      console.log(this.formData.name);
-      console.log(this.formData.email);
-      console.log(this.formData.message);
-
       axios
-        .post(import.meta.env.BASE_URL + "api/sendEmail.php" , {
+        .post(import.meta.env.BASE_URL + "api/sendEmail.php", {
           name: this.formData.name,
           email: this.formData.email,
           message: this.formData.message,
@@ -88,13 +84,22 @@ export default {
         .then((response) => {
           console.log(response);
           if (response) {
-            console.log("success");
+            Swal.fire({
+              text: "Message has been sent successfully",
+              icon: "success",
+              confirmButtonText: "OK",
+            });
+
             //clear fields
             this.formData.name = null;
             this.formData.email = null;
             this.formData.message = null;
           } else {
-            console.log("error");
+            Swal.fire({
+              html: "<b>Oops!</b> Form submission failed.",
+              icon: "error",
+              confirmButtonText: "OK",
+            });
           }
         });
     },
