@@ -3367,3 +3367,9 @@ button:focus {
 .router-link-active {
   color: #ffc864 !important;
 }
+
+@media only screen and (max-width: 580px) {
+  #nprogress .spinner {
+    display: none !important;
+  }
+}

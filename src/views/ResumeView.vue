@@ -123,7 +123,7 @@
               {{ certificate.name }}
             </h3>
             <p class="case-item__caption">
-              <a :href="certificate.url" target="_blank"
+              <a href="javascript:void(0)" v-on:click="viewCredential(certificate.url)" target="_blank"
                 >See Credential
                 <i class="fa-regular fa-arrow-up-right-from-square"></i
               ></a>
@@ -233,6 +233,10 @@ export default {
         },
       ];
     },
+    viewCredential(url)
+    {
+      window.open(url, '_blank');
+    }
   },
   mounted() {
     this.loadMyCertifications();

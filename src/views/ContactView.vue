@@ -45,9 +45,9 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-12" style="text-align:right;">
+        <div class="col-12" style="text-align: right">
           <button type="submit" class="btn">
-            <i class="fa-solid fa-paper-plane"></i>  Send Message
+            <i class="fa-solid fa-paper-plane"></i> Send Message
           </button>
         </div>
       </div>
@@ -58,37 +58,50 @@
 <script>
 import NavigationMain from "../components/navigation/NavigationMain.vue";
 import BreadcrumbInner from "../components/breadcrumb/BreadcrumbInner.vue";
+import axios from "axios";
 
 export default {
-  data(){
-     return {
-        formData : {
-          name: null,
-          email: null,
-          message:null,
-        }
-     }
+  data() {
+    return {
+      formData: {
+        name: null,
+        email: null,
+        message: null,
+      },
+    };
   },
   methods: {
-    sendEnquiry: function(e) {
+    sendEnquiry: function (e) {
       e.preventDefault();
 
       //collect form data
       console.log(this.formData.name);
       console.log(this.formData.email);
       console.log(this.formData.message);
-      alert('Form Data Collected!');
 
-      //clear fields
-      this.formData.name = null;
-      this.formData.email = null;
-      this.formData.message = null;
-
-    }
+      axios
+        .post(import.meta.env.BASE_URL + "api/sendEmail.php" , {
+          name: this.formData.name,
+          email: this.formData.email,
+          message: this.formData.message,
+        })
+        .then((response) => {
+          console.log(response);
+          if (response) {
+            console.log("success");
+            //clear fields
+            this.formData.name = null;
+            this.formData.email = null;
+            this.formData.message = null;
+          } else {
+            console.log("error");
+          }
+        });
+    },
   },
   components: {
     NavigationMain,
-    BreadcrumbInner
+    BreadcrumbInner,
   },
 };
 </script>
