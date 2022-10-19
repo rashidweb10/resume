@@ -70,7 +70,7 @@ export default {
       singleWork: [],
     };
   },
-  created() {
+  mounted() {
     this.getAllwork();
   },
   components: {

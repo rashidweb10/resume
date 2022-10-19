@@ -32,7 +32,10 @@ export default {
         <div class="sidebar__base-info">
           <RouterLink to="/">
             <figure class="avatar-box">
-              <img src="/resume/img/Muhammed_rashid.jpg" alt="Ricardo Black" />
+              <img
+                v-lazy="'/resume/img/Muhammed_rashid.jpg'"
+                alt="Ricardo Black"
+              />
             </figure>
           </RouterLink>
 

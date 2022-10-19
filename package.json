@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "axios": "^0.27.2",
+    "lazy-load-vue3": "^1.2.8",
     "nprogress": "^0.2.0",
     "sweetalert2": "^11.5.2",
     "vue": "^3.2.38",

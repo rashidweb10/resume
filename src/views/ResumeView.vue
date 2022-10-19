@@ -7,7 +7,7 @@
 
     <!-- About -->
     <BreadcrumbInner :titleData="'Resume'"></BreadcrumbInner>
-    
+
     <div class="row">
       <div class="col-12 col-lg-7">
         <!-- Education -->
@@ -123,7 +123,10 @@
               {{ certificate.name }}
             </h3>
             <p class="case-item__caption">
-              <a href="javascript:void(0)" v-on:click="viewCredential(certificate.url)" target="_blank"
+              <a
+                href="javascript:void(0)"
+                v-on:click="viewCredential(certificate.url)"
+                target="_blank"
                 >See Credential
                 <i class="fa-regular fa-arrow-up-right-from-square"></i
               ></a>
@@ -235,10 +238,9 @@ export default {
 
       //this.myCertifications = [];
     },
-    viewCredential(url)
-    {
-      window.open(url, '_blank');
-    }
+    viewCredential(url) {
+      window.open(url, "_blank");
+    },
   },
   mounted() {
     this.loadMyCertifications();
