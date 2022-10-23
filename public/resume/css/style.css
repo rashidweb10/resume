@@ -203,7 +203,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .title--h1 {
-  font-size: 2rem;
+  font-size: 1.8rem; /*2rem*/
   margin-bottom: 1.0625rem;
 }
 
@@ -3372,4 +3372,8 @@ button:focus {
   #nprogress .spinner {
     display: none !important;
   }
+}
+
+:focus-visible {
+  outline: none;
 }

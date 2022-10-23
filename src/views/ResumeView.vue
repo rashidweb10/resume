@@ -117,7 +117,7 @@
         class="col-12 col-lg-6"
       >
         <div class="case-item box box--s2 box-inner">
-          <img class="case-item__icon" :src="certificate.image" alt="" />
+          <img class="case-item__icon" v-lazy="certificate.image" alt="" />
           <div>
             <h3 class="title title--h3" style="margin-top: -4px">
               {{ certificate.name }}

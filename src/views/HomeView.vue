@@ -15,7 +15,7 @@
       </p>
       <p>
         I have Worked on 45+ websites & developed Frontend & backend of
-        E-commerce, CMS, CRM, HRMS, LMS, Static & Custom based websites.
+        E-commerce, CMS, CRM, HRMS, LMS, Wordpress, Static & Custom based websites.
       </p>
 
       <h2 class="title title--h2 mt-3">What I'm Doing</h2>

@@ -52,7 +52,12 @@ export default {
         });
     },
     makeReadableURL(param) {
-      return param.replace(" ", "-");
+      var result = param.replace(" ", "-");
+      var result = result.replace("|", "-");
+      var result = result.replace(" ", "-");
+      var result = result.replace(" ", "-");
+      var result = result.replace("---", "-");
+      return result;
     },
   },
 };
