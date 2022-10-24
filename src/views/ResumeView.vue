@@ -57,6 +57,35 @@
       </div>
     </div>
 
+    <!-- Roles & Responsibilities -->
+    <h2 class="title title--h2 mt-3">Current Role & Responsibilities</h2>
+    <ul class="role-list">
+      <li>Involvement with team in software planning phase.</li>
+      <li>
+        Building fullstack application with popular PHP frameworks <br />
+        [ Codeignitor / Laravel / Smarty / Yii / CakePHP ] mostly Codeignitor &
+        Laravel.
+      </li>
+      <li>API development.</li>
+      <li>
+        Third-party API integration <br />
+        [ Razporpay / PayUmoney / Stripe / Google / LinkedIn / Facebook / Wati /
+        Twilio / Sendblue / MailGun / IpInfo / Web Scraping / Woocommerce API /
+        SMSGATEWAYHUB / 2Factor / Binanace etc. ].
+      </li>
+      <li>Writing optimized MySQL queries in PHP frameworks.</li>
+      <li>
+        Website maintenance, client coordination & reporting to both the Project
+        manager & client.
+      </li>
+      <li>
+        Working with web designers to build complex modules using frontend
+        technologies <br />
+        [ jQuery / Ajax / VueJS / javaScript ]
+      </li>
+      <li>Excellent problem solving skills.</li>
+    </ul>
+
     <!-- Coding Skills -->
     <h2 class="title title--h2 mt-3">Coding Skills</h2>
     <div class="">
@@ -83,7 +112,7 @@
     </div>
 
     <!-- Skills -->
-    <h2 class="title title--h2 mt-3">Languages</h2>
+    <!--<h2 class="title title--h2 mt-3">Languages</h2>
     <div class="">
       <div class="row">
         <div
@@ -105,7 +134,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div>-->
 
     <h2 class="title title--h2 mt-3">Licenses & Certifications</h2>
 
@@ -123,10 +152,7 @@
               {{ certificate.name }}
             </h3>
             <p class="case-item__caption">
-              <a
-                href="javascript:void(0)"
-                v-on:click="viewCredential(certificate.url)"
-                target="_blank"
+              <a :href="certificate.url" target="_blank"
                 >See Credential
                 <i class="fa-regular fa-arrow-up-right-from-square"></i
               ></a>
@@ -251,3 +277,31 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.role-list li {
+  margin-bottom: 10px;
+}
+.role-list li {
+  list-style: none;
+  position: relative;
+  padding: 3px 0 2px 25px;
+}
+
+.role-list li::before {
+  content: "\f111"; /***/
+  position: absolute;
+  /*top: 0px;
+  font-size:24px;
+  top: 4px;
+  font-size: 15px;*/
+  top: 8px;
+  font-size: 8px;
+  left: 0;
+  font-family: "Font Awesome 6 Free";
+}
+
+.role-list {
+  padding-left: 0px;
+}
+</style>
