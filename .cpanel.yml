@@ -1,5 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home2/gnbags/repositories/resume
+    - export DEPLOYPATH=/home2/gnbags/repositories/resume2
     - /bin/cp -R images $DEPLOYPATH
