@@ -1,6 +1,7 @@
 # Logs
 logs
 .htaccess
+backups
 *.log
 *.zip
 npm-debug.log*
