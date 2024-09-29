@@ -1,0 +1,194 @@
+[
+  {
+    "id": 0,
+    "name": "Lijjat Papad",
+    "website": "lijjat.com",
+    "image": "/resume/img/projects/lijjat.JPG",
+    "stacks": "Laravel 9",
+    "software_desc_1": " I Will update later..",
+    "learn": [
+      {
+        "id": 1,
+        "content": "I Will update later.."
+      }
+    ],
+    "role": "Sr. Fullstack Developer",
+    "type": "E-commerce Application"
+  },
+  {
+    "id": 1,
+    "name": "Cancri Jewells",
+    "website": "cancrijewells.com",
+    "image": "/resume/img/projects/cancri.JPG",
+    "stacks": "CodeIgniter 3",
+    "software_desc_1": " I Will update later..",
+    "learn": [
+      {
+        "id": 1,
+        "content": "I Will update later.."
+      }
+    ],
+    "role": "Sr. Fullstack Developer",
+    "type": "E-commerce Application"
+  },
+  {
+    "id": 2,
+    "name": "Escrowv",
+    "website": "escrowv.com",
+    "image": "/resume/img/projects/escrowv.JPG",
+    "stacks": "CodeIgniter 3",
+    "software_desc_1": " I Will update later..",
+    "learn": [
+      {
+        "id": 1,
+        "content": "I Will update later.."
+      }
+    ],
+    "role": "Sr. Fullstack Developer",
+    "type": "Customized Application"
+  },
+  {
+    "id": 3,
+    "name": "Motiwala & Sons",
+    "website": "escrowv.com",
+    "image": "/resume/img/projects/motiwala.JPG",
+    "stacks": "Laravel 9",
+    "software_desc_1": " I Will update later..",
+    "learn": [
+      {
+        "id": 1,
+        "content": "I Will update later.."
+      }
+    ],
+    "role": "Sr. Fullstack Developer",
+    "type": "Customized Application"
+  },
+  {
+    "id": 4,
+    "name": "Attari Classes LMS",
+    "website": "lms.attariclasses.in",
+    "image": "/resume/img/projects/attari-classes.JPG",
+    "stacks": "CodeIgniter 3",
+    "software_desc_1": " I Will update later..",
+    "learn": [
+      {
+        "id": 1,
+        "content": "I Will update later.."
+      }
+    ],
+    "role": "Sr. Fullstack Developer",
+    "type": "Customized Application"
+  },
+  {
+    "id": 5,
+    "name": "Nexgeno Billing",
+    "website": "",
+    "image": "/resume/img/projects/nexgeno-billing.JPG",
+    "stacks": "PHP 8.0",
+    "software_desc_1": " I Will update later..",
+    "learn": [
+      {
+        "id": 1,
+        "content": "I Will update later.."
+      }
+    ],
+    "role": "Sr. Fullstack Developer",
+    "type": "Billing Application"
+  },
+  {
+    "id": 6,
+    "name": "Nexgeno CRM",
+    "website": "",
+    "image": "/resume/img/projects/nexgeno-crm.JPG",
+    "stacks": "CodeIgniter 3",
+    "software_desc_1": " I Will update later..",
+    "learn": [
+      {
+        "id": 1,
+        "content": "I Will update later.."
+      }
+    ],
+    "role": "Sr. Fullstack Developer",
+    "type": "CRM Application"
+  },
+  {
+    "id": 7,
+    "name": "Lawtendo",
+    "website": "lawtendo.com",
+    "image": "/resume/img/projects/lawtendo.JPG",
+    "stacks": "CodeIgniter 3",
+    "software_desc_1": " I Will update later..",
+    "learn": [
+      {
+        "id": 1,
+        "content": "I Will update later.."
+      }
+    ],
+    "role": "Sr. Fullstack Developer",
+    "type": "Customized Application"
+  },
+  {
+    "id": 8,
+    "name": "Vallum",
+    "website": "vallum.in",
+    "image": "/resume/img/projects/vallum.JPG",
+    "stacks": "Reactjs & Nodejs",
+    "software_desc_1": " I Will update later..",
+    "learn": [
+      {
+        "id": 1,
+        "content": "I Will update later.."
+      }
+    ],
+    "role": "Sr. Fullstack Developer",
+    "type": "CMS Application"
+  },
+  {
+    "id": 9,
+    "name": "Big Deals",
+    "website": "bigdeals24x7.com",
+    "image": "/resume/img/projects/bigdeals.JPG",
+    "stacks": "CodeIgniter 3",
+    "software_desc_1": " I Will update later..",
+    "learn": [
+      {
+        "id": 1,
+        "content": "I Will update later.."
+      }
+    ],
+    "role": "Sr. Fullstack Developer",
+    "type": "E-commerce Application"
+  },
+  {
+    "id": 10,
+    "name": "Maay Mart",
+    "website": "maaymart.com",
+    "image": "/resume/img/projects/maaymart.JPG",
+    "stacks": "Laravel 9",
+    "software_desc_1": " I Will update later..",
+    "learn": [
+      {
+        "id": 1,
+        "content": "I Will update later.."
+      }
+    ],
+    "role": "Sr. Fullstack Developer",
+    "type": "E-commerce Application"
+  },
+  {
+    "id": 11,
+    "name": "Resume SPA",
+    "website": "rashidweb.gnbags.in",
+    "image": "/resume/img/projects/rashidweb.jpg",
+    "stacks": "Vue 3",
+    "software_desc_1": " I Will update later..",
+    "learn": [
+      {
+        "id": 1,
+        "content": "I Will update later.."
+      }
+    ],
+    "role": "Sr. Fullstack Developer",
+    "type": "Portfolio Website"
+  }
+]
