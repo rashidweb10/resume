@@ -171,5 +171,16 @@ export default {
   <!--<RouterView />-->
 </template>
 
-<style scoped>
+<style>
+/* Change the progress bar color */
+#nprogress .bar {
+  background: var(--color-gradient) !important;  /* <-- your desired color */
+  height: 4px;                     /* optional: adjust thickness */
+}
+
+/* Change spinner color */
+#nprogress .spinner-icon {
+  border-top-color: var(--color-gradient) !important;
+  border-left-color: var(--color-gradient) !important;
+}
 </style>
