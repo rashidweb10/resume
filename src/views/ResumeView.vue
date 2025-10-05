@@ -9,30 +9,7 @@
     <BreadcrumbInner :titleData="'Resume'"></BreadcrumbInner>
 
     <div class="row">
-      <div class="col-12 col-lg-7">
-        <!-- Education -->
-        <h2 class="title title--h2">
-          <span class="box box--s2 icon-box">
-            <i class="fa-solid fa-book-open"></i></span
-          >Education
-        </h2>
-        <div class="timeline">
-          <article
-            v-for="education in educationJourney"
-            :key="education.id"
-            class="timeline__item"
-          >
-            <h5 class="title title--h4 timeline__title">
-              {{ education.title }}
-            </h5>
-            <span class="timeline__period">{{ education.year }}</span>
-            <p class="timeline__description">
-              {{ education.desc }}
-            </p>
-          </article>
-        </div>
-      </div>
-      <div class="col-12 col-lg-5">
+      <div class="col-12 col-lg-6">
         <!-- Experience -->
         <h2 class="title title--h2">
           <span class="box box--s2 icon-box">
@@ -55,6 +32,29 @@
           </article>
         </div>
       </div>
+      <div class="col-12 col-lg-6">
+        <!-- Education -->
+        <h2 class="title title--h2">
+          <span class="box box--s2 icon-box">
+            <i class="fa-solid fa-book-open"></i></span
+          >Education
+        </h2>
+        <div class="timeline">
+          <article
+            v-for="education in educationJourney"
+            :key="education.id"
+            class="timeline__item"
+          >
+            <h5 class="title title--h4 timeline__title">
+              {{ education.title }}
+            </h5>
+            <span class="timeline__period">{{ education.year }}</span>
+            <p class="timeline__description">
+              {{ education.desc }}
+            </p>
+          </article>
+        </div>
+      </div>      
     </div>
 
     <!-- Roles & Responsibilities -->
@@ -160,71 +160,74 @@ export default {
         {
           id: 1,
           title: "University Of Mumbai",
-          desc: "Bachelor of Science in Information Technology.",
+          desc: "Bachelor of Science in Information Technology",
           year: "2013 — 2016",
         },
         {
           id: 2,
           title: "M.H. Saboo Siddik College of Engineering",
-          desc: "Higher Secondary School Certificate.",
+          desc: "Higher Secondary Certificate (HSC)",
           year: "2011 — 2013",
         },
         {
           id: 3,
           title: "M. H. Saboo Siddik Polytechnic",
-          desc: "Staff Selection Commission.",
+          desc: "Secondary School Certificate (SSC)",
           year: "2011",
         },
       ],
       experienceJourney: [
         {
           id: 0,
-          title: "Sr. Fullstack Developer",
+          title: "Sr. Web Application Developer",
           desc: "At Nexgeno Technology Pvt Ltd.",
           year: "2023 — Present",
         },
         {
           id: 1,
           title: "Fullstack Developer",
-          desc: "At Mak Enterprises.",
+          desc: "At Mak Enterprises",
           year: "2020 — 2023",
         },
         {
           id: 2,
-          title: "Web Application Developer",
-          desc: "At Mak Enterprises.",
+          title: "Backend Developer",
+          desc: "At Mak Enterprises",
           year: "2019 — 2020",
         },
         {
           id: 3,
-          title: "Jr. Web Designer",
+          title: "Jr. Frontend Developer",
           desc: "At Mak Enterprises.",
           year: "2018 — 2019",
         },
       ],
       myCodingSkillsList: [
-        { id: 1, title: "Laravel", percentage: "75" },
-        { id: 2, title: "Codeigniter", percentage: "75" },
-        { id: 3, title: "PHP", percentage: "75" },
-        { id: 4, title: "MySQL", percentage: "75" },
-        { id: 5, title: "PostgreSQL", percentage: "25" },
-        { id: 6, title: "jQuery", percentage: "75" },
-        { id: 7, title: "WordPress", percentage: "75" },
-        { id: 8, title: "JavaScript", percentage: "60" },
-        { id: 9, title: "HTML", percentage: "80" },
-        { id: 10, title: "CSS", percentage: "80" },
-        { id: 11, title: "Bootstrap", percentage: "80" },
-        { id: 12, title: "Git", percentage: "60" },
-        { id: 13, title: "VueJS", percentage: "20" },
-        { id: 14, title: "ReactJS", percentage: "25" },
-        { id: 15, title: "NodeJS", percentage: "15" },
-        { id: 16, title: "MongoDB", percentage: "15" },
-        { id: 17, title: "NextJS", percentage: "15" },
+        { id: 1, title: "Laravel", percentage: "80" },
+        { id: 2, title: "Codeigniter", percentage: "80" },
+        { id: 3, title: "Yii", percentage: "80" },
+        { id: 4, title: "PHP", percentage: "80" },
+        { id: 5, title: "MySQL", percentage: "80" },
+        { id: 6, title: "PostgreSQL", percentage: "40" },
+        { id: 8, title: "WordPress", percentage: "80" },
+        { id: 7, title: "jQuery", percentage: "80" },
+        { id: 9, title: "JavaScript", percentage: "70" },
+        { id: 10, title: "HTML", percentage: "80" },
+        { id: 11, title: "CSS", percentage: "80" },
+        { id: 12, title: "Bootstrap", percentage: "80" },
+        { id: 13, title: "Git", percentage: "70" },
+        { id: 14, title: "VueJS", percentage: "25" },
+        { id: 15, title: "ReactJS", percentage: "25" },
+        { id: 16, title: "NodeJS", percentage: "25" },
+        { id: 17, title: "MongoDB", percentage: "25" },
+        { id: 18, title: "NextJS", percentage: "25" },
+        { id: 19, title: "Cpanel & WHM", percentage: "60" }
       ],
+
       myLanguageSkillsList: [
         { id: 1, title: "English", percentage: "60" },
         { id: 2, title: "Hindi", percentage: "80" },
-        { id: 3, title: "Urdu", percentage: "85" },
+        { id: 3, title: "Urdu", percentage: "80" },
       ],
       myCertifications: null,
     };

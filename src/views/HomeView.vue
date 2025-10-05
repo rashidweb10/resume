@@ -10,14 +10,10 @@
 
     <div>
       <p>
-        Hello! I'm Muhammed Rashid, a Fullstack developer from Mumbai, India,
-        with over 5+ years of experience.
+        Hello! I'm Muhammed Rashid, a Full-Stack Developer based in Mumbai, India, with over {{experienceYears}} years of experience in developing dynamic and user-focused web applications.
       </p>
       <p>
-        Currently, I work at NexGeno Technology, where I’ve successfully built
-        more than 60 websites. My expertise covers E-commerce, CMS, CRM, HRMS,
-        LMS, WordPress, Static, and custom-built websites, handling both
-        frontend and backend development.
+        Currently, I’m working at NexGeno Technology Pvt. Ltd., where I’ve successfully developed 90+ web applications including E-commerce, CMS, CRM, HRMS, LMS, WordPress, and custom-built solutions — managing both frontend and backend development with efficiency and precision.
       </p>
 
       <h2 class="title title--h2 mt-3">What I'm Doing</h2>
@@ -52,7 +48,9 @@ import BreadcrumbInner from "../components/breadcrumb/BreadcrumbInner.vue";
 
 export default {
   data() {
+    const experienceYears = new Date().getFullYear() - 2018;
     return {
+      experienceYears,
       myJobs: null,
       AboutMePoints: [
         {

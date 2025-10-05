@@ -76,7 +76,7 @@ export default {
       e.preventDefault();
 
       axios
-        .post(import.meta.env.BASE_URL + "api/sendEmail.php", {
+        .post("https://formspree.io/f/xjkaordo", { //import.meta.env.BASE_URL + "api/sendEmail.php"
           name: this.formData.name,
           email: this.formData.email,
           message: this.formData.message,
