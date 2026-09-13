@@ -47,8 +47,10 @@
     <section class="biodata-section" aria-labelledby="financial-status">
       <h2 id="financial-status" class="title title--h2">Financial Information</h2>
       <p class="biodata-copy">
-        Our family has a home and shop in Mumbai, as well as a home in our
-        village. Further details can be shared by my father when appropriate.
+        We belong to a middle-class family that values simplicity,
+        honesty, and mutual respect. Alhamdulillah, our family has a home and
+        shop in Mumbai, along with a home in our village. Any further financial
+        details can be shared respectfully by my father at the appropriate time.
       </p>
     </section>
 
@@ -101,18 +103,18 @@ export default {
         { label: "Namaz", value: "I mostly try to be regular with prayer" },
         { label: "Maslak", value: "Sunni, Barelvi" },
         { label: "Bad Habits", value: "No cigarette, No gutka, or similar habits" },
-        { label: "Nature", value: "Simple and family-oriented" },
+        { label: "Nature", value: "Simple Men" },
         { label: "Health", value: "No health issues" },
         { label: "Residency", value: "Byculla, Mumbai 400008" },
       ],
       photos: [
         {
           src: "/resume/img/Muhammed_rashid_1.jpeg",
-          alt: "Muhammad Rashid Ansari",
+          alt: "Muhammad rashid ansari",
         },
         {
           src: "/resume/img/Muhammed_rashid.jpg",
-          alt: "Muhammad Rashid Ansari portrait",
+          alt: "Muhammad rashid ansari portrait",
         },
       ],
     };
