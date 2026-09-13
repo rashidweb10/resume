@@ -41,7 +41,7 @@ const router = createRouter({
       component: () => import('../views/ContactView.vue')
     },
     {
-      path: '/marriage-biodata',
+      path: '/biodata',
       name: 'marriageBiodata',
       meta: { title: "Marriage Biodata" },
       component: () => import('../views/MarriageBiodataView.vue')
