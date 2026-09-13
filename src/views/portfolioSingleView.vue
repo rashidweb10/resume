@@ -14,10 +14,12 @@
 
     <div class="mb-3"></div>
 
-    <img
+    <ImageLoader
       class="rounded mb-3"
+      variant="project"
       :src="singleWork.image"
-      style="width: 100%; height: auto; object-fit: inherit"
+      :alt="singleWork.name || 'Project preview'"
+      loading="eager"
     />
 
     <ul class="details-info details-info--inline">
@@ -72,6 +74,7 @@
 import NavigationMain from "../components/navigation/NavigationMain.vue";
 import BreadcrumbInner from "../components/breadcrumb/BreadcrumbInner.vue";
 import axios from "axios";
+import ImageLoader from "../components/ImageLoader.vue";
 
 export default {
   data() {
@@ -85,6 +88,7 @@ export default {
   components: {
     NavigationMain,
     BreadcrumbInner,
+    ImageLoader,
   },
   methods: {
     getAllwork: function () {

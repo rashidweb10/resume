@@ -1,6 +1,11 @@
 <script>
 // setup attribute
+import ImageLoader from "./components/ImageLoader.vue";
+
 export default {
+  components: {
+    ImageLoader,
+  },
   methods: {
     toggleContact: function () {
       const x = document.getElementsByClassName("sidebar__additional-info");
@@ -32,9 +37,11 @@ export default {
         <div class="sidebar__base-info">
           <RouterLink to="/">
             <figure class="avatar-box">
-              <img
-                v-lazy="'/resume/img/Muhammed_rashid.jpg'"
-                alt="Ricardo Black"
+              <ImageLoader
+                variant="avatar"
+                src="/resume/img/Muhammed_rashid.jpg"
+                alt="Muhammed Rashid"
+                loading="eager"
               />
             </figure>
           </RouterLink>

@@ -16,7 +16,12 @@
         <RouterLink
           :to="'/project/' + makeReadableURL(work.name) + '/' + work.id"
         >
-          <img class="rounded" v-lazy="work.image" />
+          <ImageLoader
+            class="rounded"
+            variant="thumbnail"
+            :src="work.image"
+            :alt="work.name"
+          />
           <h6 class="mt-2 mb-4">{{ work.name }}</h6>
         </RouterLink>
       </div>
@@ -28,6 +33,7 @@
 import NavigationMain from "../components/navigation/NavigationMain.vue";
 import BreadcrumbInner from "../components/breadcrumb/BreadcrumbInner.vue";
 import axios from "axios";
+import ImageLoader from "../components/ImageLoader.vue";
 
 export default {
   data() {
@@ -41,6 +47,7 @@ export default {
   components: {
     NavigationMain,
     BreadcrumbInner,
+    ImageLoader,
   },
   methods: {
     getAllwork: function () {

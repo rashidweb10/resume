@@ -131,7 +131,12 @@
         class="col-12 col-lg-6"
       >
         <div class="case-item box box--s2 box-inner">
-          <img class="case-item__icon" v-lazy="certificate.image" alt="" />
+          <ImageLoader
+            class="case-item__icon"
+            variant="icon"
+            :src="certificate.image"
+            :alt="certificate.name"
+          />
           <div>
             <h3 class="title title--h3" style="margin-top: -4px">
               {{ certificate.name }}
@@ -152,6 +157,7 @@
 <script>
 import NavigationMain from "../components/navigation/NavigationMain.vue";
 import BreadcrumbInner from "../components/breadcrumb/BreadcrumbInner.vue";
+import ImageLoader from "../components/ImageLoader.vue";
 
 export default {
   data() {
@@ -279,6 +285,7 @@ export default {
   components: {
     NavigationMain,
     BreadcrumbInner,
+    ImageLoader,
   },
 };
 </script>

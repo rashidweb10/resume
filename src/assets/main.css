@@ -1,5 +1,93 @@
 @import "./base.css";
 
+.image-loader {
+  --image-skeleton-base: #25272a;
+  --image-skeleton-highlight: #34373d;
+  background: var(--image-skeleton-base);
+  display: block;
+  isolation: isolate;
+  overflow: hidden;
+  position: relative;
+}
+
+.image-loader__skeleton {
+  animation: image-loader-shimmer 1.5s ease-in-out infinite;
+  background: linear-gradient(100deg, var(--image-skeleton-base) 35%, var(--image-skeleton-highlight) 50%, var(--image-skeleton-base) 65%);
+  background-size: 250% 100%;
+  inset: 0;
+  position: absolute;
+}
+
+.image-loader__image {
+  display: block;
+  height: 100%;
+  opacity: 0;
+  position: relative;
+  transition: opacity 220ms ease;
+  width: 100%;
+  z-index: 1;
+}
+
+.image-loader.is-loaded .image-loader__image {
+  opacity: 1;
+}
+
+.image-loader.is-loaded {
+  background: transparent;
+}
+
+.image-loader.is-loaded .image-loader__skeleton,
+.image-loader.has-error .image-loader__skeleton {
+  animation: none;
+  opacity: 0;
+}
+
+.image-loader.has-error::after {
+  background: #2b2e33;
+  content: "";
+  inset: 0;
+  position: absolute;
+}
+
+.image-loader--thumbnail,
+.image-loader--project {
+  aspect-ratio: 16 / 10;
+  width: 100%;
+}
+
+.image-loader--thumbnail .image-loader__image,
+.image-loader--project .image-loader__image {
+  object-fit: cover;
+}
+
+.image-loader--icon {
+  flex: 0 0 2.5rem;
+  height: 2.5rem;
+  width: 2.5rem;
+}
+
+.image-loader--icon .image-loader__image {
+  object-fit: contain;
+}
+
+.image-loader--avatar {
+  height: 100%;
+  width: 100%;
+}
+
+.image-loader--avatar .image-loader__image {
+  object-fit: cover;
+}
+
+@keyframes image-loader-shimmer {
+  to { background-position: -150% 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .image-loader__skeleton { animation: none; }
+  .image-loader__image { transition: none; }
+}
+
 /*#app {
   max-width: 1280px;
   margin: 0 auto;
