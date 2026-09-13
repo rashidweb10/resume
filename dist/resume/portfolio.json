@@ -1,5 +1,101 @@
 [
   {
+    "id": 12,
+    "name": "HBT Medical College & Cooper Hospital",
+    "website": "hbtmc.edu.in",
+    "image": "/resume/img/projects/hbtmc.png",
+    "stacks": "Website Development",
+    "software_desc_1": "A public-facing website for HBT Medical College and Dr. R. N. Cooper Municipal General Hospital, Mumbai.",
+    "learn": [
+      {
+        "id": 1,
+        "content": "Website development and ongoing maintenance."
+      }
+    ],
+    "role": "Sr. Fullstack Developer",
+    "type": "Healthcare & Education Website"
+  },
+  {
+    "id": 13,
+    "name": "AtFleurs",
+    "website": "www.atfleurs.com",
+    "image": "/resume/img/projects/atfluers.png",
+    "stacks": "E-commerce Development",
+    "software_desc_1": "An online flower and gifting store serving Mumbai with bouquet, event, and delivery options.",
+    "learn": [
+      {
+        "id": 1,
+        "content": "Website development and ongoing maintenance."
+      }
+    ],
+    "role": "Sr. Fullstack Developer",
+    "type": "E-commerce Website"
+  },
+  {
+    "id": 14,
+    "name": "Silk Kabira",
+    "website": "www.silkkabira.com",
+    "image": "/resume/img/projects/silk-kabira.png",
+    "stacks": "E-commerce Development",
+    "software_desc_1": "An e-commerce storefront for handcrafted ethnic waist belts and Kamarbandh.",
+    "learn": [
+      {
+        "id": 1,
+        "content": "Website development and ongoing maintenance."
+      }
+    ],
+    "role": "Sr. Fullstack Developer",
+    "type": "E-commerce Website"
+  },
+  {
+    "id": 15,
+    "name": "HVS Hospitals",
+    "website": "www.hvshospitals.com",
+    "image": "/resume/img/projects/hvs.png",
+    "stacks": "Website Development",
+    "software_desc_1": "A healthcare website focused on comprehensive heart and vascular care.",
+    "learn": [
+      {
+        "id": 1,
+        "content": "Website development and ongoing maintenance."
+      }
+    ],
+    "role": "Sr. Fullstack Developer",
+    "type": "Healthcare Website"
+  },
+  {
+    "id": 16,
+    "name": "Abaya Designer",
+    "website": "abayadesigner.com",
+    "image": "/resume/img/projects/abaya-designer.png",
+    "stacks": "E-commerce Development",
+    "software_desc_1": "An online fashion storefront for abaya collections.",
+    "learn": [
+      {
+        "id": 1,
+        "content": "Website development and ongoing maintenance."
+      }
+    ],
+    "role": "Sr. Fullstack Developer",
+    "type": "E-commerce Website"
+  },
+  {
+    "id": 17,
+    "name": "NexGeno",
+    "website": "nexgeno.in",
+    "image": "/resume/img/projects/nexgeno.png",
+    "stacks": "Website Development",
+    "software_desc_1": "A corporate website for NexGeno's web design and development services.",
+    "learn": [
+      {
+        "id": 1,
+        "content": "Website development and ongoing maintenance."
+      }
+    ],
+    "role": "Sr. Fullstack Developer",
+    "type": "Corporate Website"
+  },
+  {
     "id": 0,
     "name": "Lijjat Papad",
     "website": "lijjat.com",
