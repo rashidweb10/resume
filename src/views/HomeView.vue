@@ -8,7 +8,7 @@
 
     <div class="about-content">
       <p class="about-content__intro">
-        Hello, I'm Muhammed Rashid, a web application developer based in Mumbai
+        Hello, I'm Muhammed rashid, a web application developer based in Mumbai
         with over {{ experienceYears }} years of experience building reliable,
         user-focused digital products.
       </p>

@@ -40,7 +40,7 @@ export default {
               <ImageLoader
                 variant="avatar"
                 src="/resume/img/Muhammed_rashid_1.jpeg"
-                alt="Muhammed Rashid"
+                alt="Muhammed rashid"
                 loading="eager"
               />
             </figure>
@@ -48,7 +48,7 @@ export default {
 
           <RouterLink to="/">
             <div class="text-xl-center">
-              <h3 class="title title--h3 sidebar__name">Muhammed Rashid</h3>
+              <h3 class="title title--h3 sidebar__name">Muhammed rashid</h3>
               <div class="badge">Web Application Developer</div>
             </div>
           </RouterLink>

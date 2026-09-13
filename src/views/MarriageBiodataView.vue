@@ -212,27 +212,27 @@ export default {
       photos: [
         {
           src: "/resume/img/bio/IMG_20260816_221957.jpg.jpeg",
-          alt: "Muhammad Rashid Ansari portrait",
+          alt: "Muhammad rashid Ansari portrait",
           ratio: "1 / 1",
         },
         {
           src: "/resume/img/bio/IMG_20260822_003108_154.jpg.jpeg",
-          alt: "Muhammad Rashid Ansari side portrait",
+          alt: "Muhammad rashid Ansari side portrait",
           ratio: "1 / 1",
         },
         {
           src: "/resume/img/bio/Screenshot_2022-10-01-11-55-52-800_com.whatsapp.w4b.jpg.jpeg",
-          alt: "Muhammad Rashid Ansari outdoors",
+          alt: "Muhammad rashid Ansari outdoors",
           ratio: "3 / 4",
         },
         {
           src: "/resume/img/bio/Screenshot_2025-08-18-19-56-24-65_96b26121e545231a3c569311a54cda96.jpg.jpeg",
-          alt: "Muhammad Rashid Ansari full-length portrait",
+          alt: "Muhammad rashid Ansari full-length portrait",
           ratio: "9 / 16",
         },
         {
           src: "/resume/img/bio/IMG_20260913_204520.jpg.jpeg",
-          alt: "Muhammad Rashid Ansari with family",
+          alt: "Muhammad rashid Ansari with family",
           ratio: "4 / 3",
         },
       ],
