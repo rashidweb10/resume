@@ -338,6 +338,7 @@ export default {
 }
 
 .biodata-page__header {
+  animation: biodata-section-enter 460ms both cubic-bezier(0.2, 0.8, 0.2, 1);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   padding-bottom: 1.75rem;
 }
@@ -356,8 +357,29 @@ export default {
 }
 
 .biodata-section {
+  animation: biodata-section-enter 460ms both cubic-bezier(0.2, 0.8, 0.2, 1);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   padding: 1.75rem 0;
+}
+
+.biodata-section:nth-of-type(1) {
+  animation-delay: 70ms;
+}
+
+.biodata-section:nth-of-type(2) {
+  animation-delay: 140ms;
+}
+
+.biodata-section:nth-of-type(3) {
+  animation-delay: 210ms;
+}
+
+.biodata-section:nth-of-type(4) {
+  animation-delay: 280ms;
+}
+
+.biodata-section:nth-of-type(5) {
+  animation-delay: 350ms;
 }
 
 .biodata-section:last-child {
@@ -557,6 +579,17 @@ export default {
   color: #ffffff;
 }
 
+@keyframes biodata-section-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @media (max-width: 580px) {
   .biodata-page {
     padding-top: 1.5rem;
@@ -604,6 +637,8 @@ export default {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .biodata-page__header,
+  .biodata-section,
   .biodata-gallery__item,
   .biodata-gallery__expand,
   .biodata-lightbox__close,
