@@ -66,17 +66,117 @@
     <section class="biodata-section" aria-labelledby="photo-gallery">
       <h2 id="photo-gallery" class="title title--h2">Photo Gallery</h2>
       <div class="biodata-gallery">
-        <ImageLoader
-          v-for="photo in photos"
+        <button
+          v-for="(photo, index) in photos"
           :key="photo.src"
-          class="biodata-gallery__image"
-          :src="photo.src"
-          :alt="photo.alt"
-          loading="lazy"
-        />
+          class="biodata-gallery__item"
+          :style="{ '--photo-ratio': photo.ratio }"
+          type="button"
+          :aria-label="`Open photo ${index + 1} of ${photos.length}`"
+          @click="openPhoto(index)"
+        >
+          <ImageLoader
+            class="biodata-gallery__image"
+            variant="gallery"
+            :src="photo.src"
+            :alt="photo.alt"
+            loading="lazy"
+          />
+          <span class="biodata-gallery__expand" aria-hidden="true">
+            <i class="fa-solid fa-expand"></i>
+          </span>
+        </button>
       </div>
     </section>
   </div>
+
+  <Teleport to="body">
+    <div
+      v-if="activePhoto"
+      class="biodata-lightbox"
+      role="dialog"
+      aria-modal="true"
+      :aria-label="`Photo ${activePhotoIndex + 1} of ${photos.length}`"
+      @click.self="closePhoto"
+    >
+      <button
+        class="biodata-lightbox__close"
+        type="button"
+        aria-label="Close photo gallery"
+        title="Close"
+        @click="closePhoto"
+      >
+        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+      </button>
+
+      <button
+        class="biodata-lightbox__control biodata-lightbox__control--previous"
+        type="button"
+        aria-label="Previous photo"
+        title="Previous photo"
+        @click="showPreviousPhoto"
+      >
+        <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+      </button>
+
+      <ImageLoader
+        class="biodata-lightbox__image"
+        variant="lightbox"
+        :src="activePhoto.src"
+        :alt="activePhoto.alt"
+        loading="eager"
+        :style="{ transform: `scale(${photoZoom})` }"
+        @wheel.prevent="handleZoomWheel"
+      />
+
+      <button
+        class="biodata-lightbox__control biodata-lightbox__control--next"
+        type="button"
+        aria-label="Next photo"
+        title="Next photo"
+        @click="showNextPhoto"
+      >
+        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+      </button>
+
+      <p class="biodata-lightbox__count">
+        {{ activePhotoIndex + 1 }} / {{ photos.length }}
+      </p>
+
+      <div class="biodata-lightbox__zoom" aria-label="Photo zoom controls">
+        <button
+          class="biodata-lightbox__control"
+          type="button"
+          aria-label="Zoom out"
+          title="Zoom out"
+          :disabled="photoZoom === 1"
+          @click="zoomOut"
+        >
+          <i class="fa-solid fa-magnifying-glass-minus" aria-hidden="true"></i>
+        </button>
+        <button
+          class="biodata-lightbox__control"
+          type="button"
+          aria-label="Reset zoom"
+          title="Reset zoom"
+          :disabled="photoZoom === 1"
+          @click="resetZoom"
+        >
+          <i class="fa-solid fa-rotate-left" aria-hidden="true"></i>
+        </button>
+        <button
+          class="biodata-lightbox__control"
+          type="button"
+          aria-label="Zoom in"
+          title="Zoom in"
+          :disabled="photoZoom === 3"
+          @click="zoomIn"
+        >
+          <i class="fa-solid fa-magnifying-glass-plus" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+  </Teleport>
 </template>
 
 <script>
@@ -91,6 +191,8 @@ export default {
   data() {
     return {
       addedRobotsTag: false,
+      activePhotoIndex: null,
+      photoZoom: 1,
       personalDetails: [
         { label: "Date of Birth", value: "29 April 1996" },
         { label: "Height", value: "5 ft 6 in" },
@@ -109,12 +211,24 @@ export default {
       ],
       photos: [
         {
-          src: "/resume/img/Muhammed_rashid_1.jpeg",
-          alt: "Muhammad rashid ansari",
+          src: "/resume/img/bio/IMG_20260816_221957.jpg.jpeg",
+          alt: "Muhammad Rashid Ansari portrait",
+          ratio: "1 / 1",
         },
         {
-          src: "/resume/img/Muhammed_rashid.jpg",
-          alt: "Muhammad rashid ansari portrait",
+          src: "/resume/img/bio/IMG_20260822_003108_154.jpg.jpeg",
+          alt: "Muhammad Rashid Ansari side portrait",
+          ratio: "1 / 1",
+        },
+        {
+          src: "/resume/img/bio/Screenshot_2022-10-01-11-55-52-800_com.whatsapp.w4b.jpg.jpeg",
+          alt: "Muhammad Rashid Ansari outdoors",
+          ratio: "3 / 4",
+        },
+        {
+          src: "/resume/img/bio/Screenshot_2025-08-18-19-56-24-65_96b26121e545231a3c569311a54cda96.jpg.jpeg",
+          alt: "Muhammad Rashid Ansari full-length portrait",
+          ratio: "9 / 16",
         },
       ],
     };
@@ -130,6 +244,7 @@ export default {
     }
 
     robotsTag.content = "noindex, nofollow, noarchive, nosnippet";
+    window.addEventListener("keydown", this.handleKeydown);
   },
   beforeUnmount() {
     const robotsTag = document.querySelector('meta[name="robots"]');
@@ -141,6 +256,78 @@ export default {
         robotsTag.content = "index, follow";
       }
     }
+
+    window.removeEventListener("keydown", this.handleKeydown);
+    document.body.classList.remove("is-scroll-disabled");
+  },
+  computed: {
+    activePhoto() {
+      return this.activePhotoIndex === null
+        ? null
+        : this.photos[this.activePhotoIndex];
+    },
+  },
+  methods: {
+    openPhoto(index) {
+      this.activePhotoIndex = index;
+      this.resetZoom();
+      document.body.classList.add("is-scroll-disabled");
+    },
+    closePhoto() {
+      this.activePhotoIndex = null;
+      this.resetZoom();
+      document.body.classList.remove("is-scroll-disabled");
+    },
+    showPreviousPhoto() {
+      this.activePhotoIndex =
+        (this.activePhotoIndex - 1 + this.photos.length) % this.photos.length;
+      this.resetZoom();
+    },
+    showNextPhoto() {
+      this.activePhotoIndex = (this.activePhotoIndex + 1) % this.photos.length;
+      this.resetZoom();
+    },
+    zoomIn() {
+      this.photoZoom = Math.min(3, Number((this.photoZoom + 0.25).toFixed(2)));
+    },
+    zoomOut() {
+      this.photoZoom = Math.max(1, Number((this.photoZoom - 0.25).toFixed(2)));
+    },
+    resetZoom() {
+      this.photoZoom = 1;
+    },
+    handleZoomWheel(event) {
+      if (event.deltaY < 0) {
+        this.zoomIn();
+      } else {
+        this.zoomOut();
+      }
+    },
+    handleKeydown(event) {
+      if (this.activePhotoIndex === null) {
+        return;
+      }
+
+      if (event.key === "Escape") {
+        this.closePhoto();
+      }
+
+      if (event.key === "ArrowLeft") {
+        this.showPreviousPhoto();
+      }
+
+      if (event.key === "ArrowRight") {
+        this.showNextPhoto();
+      }
+
+      if (event.key === "+" || event.key === "=") {
+        this.zoomIn();
+      }
+
+      if (event.key === "-") {
+        this.zoomOut();
+      }
+    },
   },
 };
 </script>
@@ -218,20 +405,156 @@ export default {
 }
 
 .biodata-gallery {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  max-width: 34rem;
+  column-count: 3;
+  column-gap: 1rem;
+  max-width: 52rem;
+}
+
+.biodata-gallery__item {
+  appearance: none;
+  aspect-ratio: var(--photo-ratio);
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem;
+  break-inside: avoid;
+  cursor: zoom-in;
+  display: block;
+  margin: 0 0 1rem;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  transition: border-color 180ms ease, transform 180ms ease;
+  width: 100%;
+}
+
+.biodata-gallery__item:hover,
+.biodata-gallery__item:focus-visible {
+  border-color: rgba(255, 219, 110, 0.75);
+  outline: 0;
+  transform: translateY(-0.1875rem);
 }
 
 .biodata-gallery__image {
-  aspect-ratio: 4 / 5;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 0.5rem;
+  height: 100%;
+  width: 100%;
 }
 
 .biodata-gallery__image :deep(.image-loader__image) {
   object-fit: cover;
+}
+
+.biodata-gallery__expand {
+  align-items: center;
+  background: rgba(16, 17, 19, 0.75);
+  border-radius: 50%;
+  bottom: 0.75rem;
+  color: #ffdb6e;
+  display: flex;
+  height: 2rem;
+  justify-content: center;
+  opacity: 0;
+  position: absolute;
+  right: 0.75rem;
+  transition: opacity 180ms ease;
+  width: 2rem;
+}
+
+.biodata-gallery__item:hover .biodata-gallery__expand,
+.biodata-gallery__item:focus-visible .biodata-gallery__expand {
+  opacity: 1;
+}
+
+.biodata-lightbox {
+  align-items: center;
+  background: rgba(8, 9, 10, 0.94);
+  display: flex;
+  inset: 0;
+  justify-content: center;
+  padding: 4.5rem 5.5rem;
+  position: fixed;
+  z-index: 2000;
+}
+
+.biodata-lightbox__image {
+  height: min(78vh, 52rem);
+  max-width: min(82vw, 62rem);
+  transition: transform 180ms ease;
+  width: auto;
+  will-change: transform;
+}
+
+.biodata-lightbox__image :deep(.image-loader__image) {
+  object-fit: contain;
+}
+
+.biodata-lightbox__close,
+.biodata-lightbox__control {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 50%;
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  height: 2.75rem;
+  justify-content: center;
+  position: absolute;
+  transition: background 180ms ease, color 180ms ease;
+  width: 2.75rem;
+}
+
+.biodata-lightbox__close:hover,
+.biodata-lightbox__control:hover,
+.biodata-lightbox__close:focus-visible,
+.biodata-lightbox__control:focus-visible {
+  background: #ffdb6e;
+  color: #1d1e20;
+  outline: 0;
+}
+
+.biodata-lightbox__close {
+  right: 1.5rem;
+  top: 1.5rem;
+}
+
+.biodata-lightbox__control--previous {
+  left: 1.5rem;
+}
+
+.biodata-lightbox__control--next {
+  right: 1.5rem;
+}
+
+.biodata-lightbox__count {
+  left: 1.5rem;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.8125rem;
+  margin: 0;
+  position: absolute;
+  top: 1.875rem;
+}
+
+.biodata-lightbox__zoom {
+  bottom: 1.25rem;
+  display: flex;
+  gap: 0.5rem;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+}
+
+.biodata-lightbox__zoom .biodata-lightbox__control {
+  position: static;
+}
+
+.biodata-lightbox__control:disabled {
+  cursor: default;
+  opacity: 0.35;
+}
+
+.biodata-lightbox__control:disabled:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
 }
 
 @media (max-width: 580px) {
@@ -239,13 +562,54 @@ export default {
     padding-top: 1.5rem;
   }
 
-  .biodata-details,
-  .biodata-gallery {
+  .biodata-details {
     grid-template-columns: 1fr;
   }
 
   .biodata-gallery {
-    max-width: 18rem;
+    column-count: 2;
+    column-gap: 0.75rem;
+  }
+
+  .biodata-gallery__item {
+    margin-bottom: 0.75rem;
+  }
+
+  .biodata-lightbox {
+    padding: 4.5rem 1rem 3.5rem;
+  }
+
+  .biodata-lightbox__image {
+    height: min(72vh, 40rem);
+    max-width: calc(100vw - 2rem);
+  }
+
+  .biodata-lightbox__control--previous {
+    left: 0.75rem;
+  }
+
+  .biodata-lightbox__control--next {
+    right: 0.75rem;
+  }
+
+  .biodata-lightbox__close {
+    right: 0.75rem;
+    top: 0.75rem;
+  }
+
+  .biodata-lightbox__count {
+    left: 0.75rem;
+    top: 1.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .biodata-gallery__item,
+  .biodata-gallery__expand,
+  .biodata-lightbox__close,
+  .biodata-lightbox__control,
+  .biodata-lightbox__image {
+    transition: none;
   }
 }
 </style>
