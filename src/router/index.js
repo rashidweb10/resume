@@ -41,6 +41,12 @@ const router = createRouter({
       component: () => import('../views/ContactView.vue')
     },
     {
+      path: '/marriage-biodata',
+      name: 'marriageBiodata',
+      meta: { title: "Marriage Biodata" },
+      component: () => import('../views/MarriageBiodataView.vue')
+    },
+    {
       path: '/404',
       name: '404',
       meta: { title: "PageNotFound" },
