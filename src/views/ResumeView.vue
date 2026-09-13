@@ -60,17 +60,15 @@
     </div>
 
     <!-- Roles & Responsibilities -->
-    <h2 class="title title--h2 mt-3">Current Role & Responsibilities</h2>
+    <h2 class="title title--h2 mt-3">Roles & Responsibilities</h2>
     <ul class="role-list">
-      <li>Work on new application features.</li>
-      <li>Team communication.</li>
-      <li>Task creation, prioritization, and distribution.</li>
-      <li>Third-party tools configuration.</li>
-      <li>
-        Fix bugs and problems across the entire codebase in an efficient, timely
-        manner.
-      </li>
-      <li>Excellent problem solving skills.</li>
+      <li>Plan and build web applications based on business requirements.</li>
+      <li>Develop frontend and backend features for new and existing projects.</li>
+      <li>Turn complex requirements into practical technical solutions.</li>
+      <li>Fix bugs and keep applications stable, secure, and reliable.</li>
+      <li>Improve application speed, database performance, and code quality.</li>
+      <li>Manage tasks, support team members, and keep delivery on track.</li>
+      <li>Configure and integrate third-party tools, APIs, and services.</li>
     </ul>
 
     <!-- Coding Skills -->
