@@ -49,7 +49,7 @@ export default {
           <RouterLink to="/">
             <div class="text-xl-center">
               <h3 class="title title--h3 sidebar__name">Muhammed Rashid</h3>
-              <div class="badge">Fullstack Developer</div>
+              <div class="badge">Web Application Developer</div>
             </div>
           </RouterLink>
 
