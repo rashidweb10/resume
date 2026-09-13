@@ -5,7 +5,7 @@
     "website": "hbtmc.edu.in",
     "image": "/resume/img/projects/hbtmc.png",
     "stacks": "Website Development",
-    "software_desc_1": "A public-facing website for HBT Medical College and Dr. R. N. Cooper Municipal General Hospital, Mumbai.",
+    "software_desc_1": "A unified information hub for HBT Medical College and Dr. R. N. Cooper Municipal General Hospital, bringing patient services, admissions, academics, departments, notices, and institutional resources into one accessible experience.",
     "learn": [
       {
         "id": 1,
@@ -21,7 +21,7 @@
     "website": "www.atfleurs.com",
     "image": "/resume/img/projects/atfluers.png",
     "stacks": "E-commerce Development",
-    "software_desc_1": "An online flower and gifting store serving Mumbai with bouquet, event, and delivery options.",
+    "software_desc_1": "A Mumbai flower-commerce platform for bouquets, custom arrangements, gifts, same-day and midnight delivery, corporate decor, and event floral services.",
     "learn": [
       {
         "id": 1,
@@ -37,7 +37,7 @@
     "website": "www.silkkabira.com",
     "image": "/resume/img/projects/silk-kabira.png",
     "stacks": "E-commerce Development",
-    "software_desc_1": "An e-commerce storefront for handcrafted ethnic waist belts and Kamarbandh.",
+    "software_desc_1": "A premium commerce and wholesale site for Silk Kabira handcrafted embellished waist belts, presenting collections, craftsmanship, distributor enquiries, and export-ready ordering.",
     "learn": [
       {
         "id": 1,
@@ -53,7 +53,7 @@
     "website": "www.hvshospitals.com",
     "image": "/resume/img/projects/hvs.png",
     "stacks": "Website Development",
-    "software_desc_1": "A healthcare website focused on comprehensive heart and vascular care.",
+    "software_desc_1": "A healthcare information platform for HVS Hospitals, helping patients explore cardiac and vascular procedures, doctors, diagnostics, locations, second opinions, and international-patient support.",
     "learn": [
       {
         "id": 1,
@@ -69,7 +69,7 @@
     "website": "abayadesigner.com",
     "image": "/resume/img/projects/abaya-designer.png",
     "stacks": "E-commerce Development",
-    "software_desc_1": "An online fashion storefront for abaya collections.",
+    "software_desc_1": "A fashion-focused e-commerce website for Abaya Designer, presenting abaya collections and helping customers discover the brand online.",
     "learn": [
       {
         "id": 1,
@@ -85,7 +85,7 @@
     "website": "nexgeno.in",
     "image": "/resume/img/projects/nexgeno.png",
     "stacks": "Website Development",
-    "software_desc_1": "A corporate website for NexGeno's web design and development services.",
+    "software_desc_1": "A corporate digital-services website for NexGeno, outlining brand strategy, UI and UX, web and custom technology, e-commerce, marketing, automation, and consulting services.",
     "learn": [
       {
         "id": 1,
@@ -101,7 +101,7 @@
     "website": "lijjat.com",
     "image": "/resume/img/projects/lijjat.JPG",
     "stacks": "Laravel 9",
-    "software_desc_1": " I Will update later..",
+    "software_desc_1": "An e-commerce experience for Shri Mahila Griha Udyog Lijjat Papad, allowing customers to browse and purchase papad, masalas, ready mixes, detergents, and related food products while exploring the organisation story and updates.",
     "learn": [
       {
         "id": 1,
@@ -117,7 +117,7 @@
     "website": "cancrijewells.com",
     "image": "/resume/img/projects/cancri.JPG",
     "stacks": "CodeIgniter 3",
-    "software_desc_1": " I Will update later..",
+    "software_desc_1": "An online diamond jewellery store for Cancri Jewells, bringing product collections, customer accounts, certified-jewellery information, referral benefits, and purchase support into one experience.",
     "learn": [
       {
         "id": 1,
@@ -133,7 +133,7 @@
     "website": "escrowv.com",
     "image": "/resume/img/projects/escrowv.JPG",
     "stacks": "CodeIgniter 3",
-    "software_desc_1": " I Will update later..",
+    "software_desc_1": "A marketplace for buying and selling social-media accounts with escrow-based payments, account listings, buyer and seller guidance, transactional chat, and protected release steps.",
     "learn": [
       {
         "id": 1,
@@ -149,7 +149,7 @@
     "website": "escrowv.com",
     "image": "/resume/img/projects/motiwala.JPG",
     "stacks": "Laravel 9",
-    "software_desc_1": " I Will update later..",
+    "software_desc_1": "A tailored business website for Motiwala and Sons, designed to present the brand and its offerings online.",
     "learn": [
       {
         "id": 1,
@@ -165,7 +165,7 @@
     "website": "lms.attariclasses.in",
     "image": "/resume/img/projects/attari-classes.JPG",
     "stacks": "CodeIgniter 3",
-    "software_desc_1": " I Will update later..",
+    "software_desc_1": "An LMS for Attari Classes that sells and delivers self-paced and instructor-led IT training, including cloud labs, free lessons, enrolment, recorded lectures, certificates, and student support.",
     "learn": [
       {
         "id": 1,
@@ -181,7 +181,7 @@
     "website": "",
     "image": "/resume/img/projects/nexgeno-billing.JPG",
     "stacks": "PHP 8.0",
-    "software_desc_1": " I Will update later..",
+    "software_desc_1": "A billing application designed to help businesses manage invoices, records, and day-to-day billing workflows in one place.",
     "learn": [
       {
         "id": 1,
@@ -197,7 +197,7 @@
     "website": "",
     "image": "/resume/img/projects/nexgeno-crm.JPG",
     "stacks": "CodeIgniter 3",
-    "software_desc_1": " I Will update later..",
+    "software_desc_1": "A CRM application designed to centralise customer information, relationship workflows, and operational follow-ups.",
     "learn": [
       {
         "id": 1,
@@ -213,7 +213,7 @@
     "website": "lawtendo.com",
     "image": "/resume/img/projects/lawtendo.JPG",
     "stacks": "CodeIgniter 3",
-    "software_desc_1": " I Will update later..",
+    "software_desc_1": "A legal-services platform designed to help users discover and engage with legal professionals and related services online.",
     "learn": [
       {
         "id": 1,
@@ -229,7 +229,7 @@
     "website": "vallum.in",
     "image": "/resume/img/projects/vallum.JPG",
     "stacks": "Reactjs & Nodejs",
-    "software_desc_1": " I Will update later..",
+    "software_desc_1": "A corporate website for Vallum Capital Advisors, explaining its SEBI-registered portfolio-management services, investment philosophy, strategies, investor resources, and contact path.",
     "learn": [
       {
         "id": 1,
@@ -245,7 +245,7 @@
     "website": "bigdeals24x7.com",
     "image": "/resume/img/projects/bigdeals.JPG",
     "stacks": "CodeIgniter 3",
-    "software_desc_1": " I Will update later..",
+    "software_desc_1": "An e-commerce storefront for Big Deals, built to help visitors browse offers and discover products online.",
     "learn": [
       {
         "id": 1,
@@ -261,7 +261,7 @@
     "website": "maaymart.com",
     "image": "/resume/img/projects/maaymart.JPG",
     "stacks": "Laravel 9",
-    "software_desc_1": " I Will update later..",
+    "software_desc_1": "An e-commerce storefront for Maay Mart, designed to showcase products and support online discovery and shopping.",
     "learn": [
       {
         "id": 1,
@@ -277,7 +277,7 @@
     "website": "rashidweb.gnbags.in",
     "image": "/resume/img/projects/rashidweb.jpg",
     "stacks": "Vue 3",
-    "software_desc_1": " I Will update later..",
+    "software_desc_1": "A personal single-page application that brings together my professional profile, experience, skills, portfolio, and contact information in one responsive interface.",
     "learn": [
       {
         "id": 1,
