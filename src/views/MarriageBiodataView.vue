@@ -119,15 +119,28 @@
         <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
       </button>
 
-      <ImageLoader
-        class="biodata-lightbox__image"
-        variant="lightbox"
-        :src="activePhoto.src"
-        :alt="activePhoto.alt"
-        loading="eager"
-        :style="{ transform: `scale(${photoZoom})` }"
+      <div
+        ref="photoStage"
+        class="biodata-lightbox__stage"
+        :class="{ 'is-zoomed': photoZoom > 1, 'is-dragging': isDragging }"
+        @dblclick="toggleZoom"
+        @pointerdown="handlePointerDown"
+        @pointermove="handlePointerMove"
+        @pointerup="handlePointerEnd"
+        @pointercancel="handlePointerEnd"
         @wheel.prevent="handleZoomWheel"
-      />
+      >
+        <ImageLoader
+          class="biodata-lightbox__image"
+          variant="lightbox"
+          :src="activePhoto.src"
+          :alt="activePhoto.alt"
+          loading="eager"
+          :style="{
+            transform: `translate3d(${photoPan.x}px, ${photoPan.y}px, 0) scale(${photoZoom})`,
+          }"
+        />
+      </div>
 
       <button
         class="biodata-lightbox__control biodata-lightbox__control--next"
@@ -193,6 +206,14 @@ export default {
       addedRobotsTag: false,
       activePhotoIndex: null,
       photoZoom: 1,
+      photoPan: { x: 0, y: 0 },
+      isDragging: false,
+      activePointers: {},
+      panStart: { x: 0, y: 0 },
+      panOrigin: { x: 0, y: 0 },
+      pinchStartDistance: 0,
+      pinchStartZoom: 1,
+      swipeStart: null,
       personalDetails: [
         { label: "Date of Birth", value: "29 April 1996" },
         { label: "Height", value: "5 ft 6 in" },
@@ -293,13 +314,131 @@ export default {
       this.resetZoom();
     },
     zoomIn() {
-      this.photoZoom = Math.min(3, Number((this.photoZoom + 0.25).toFixed(2)));
+      this.setZoom(this.photoZoom + 0.25);
     },
     zoomOut() {
-      this.photoZoom = Math.max(1, Number((this.photoZoom - 0.25).toFixed(2)));
+      this.setZoom(this.photoZoom - 0.25);
     },
     resetZoom() {
       this.photoZoom = 1;
+      this.photoPan = { x: 0, y: 0 };
+      this.isDragging = false;
+      this.activePointers = {};
+      this.swipeStart = null;
+    },
+    setZoom(value) {
+      this.photoZoom = Math.min(3, Math.max(1, Number(value.toFixed(2))));
+
+      if (this.photoZoom === 1) {
+        this.photoPan = { x: 0, y: 0 };
+        return;
+      }
+
+      this.constrainPan();
+    },
+    toggleZoom() {
+      if (this.photoZoom > 1) {
+        this.resetZoom();
+      } else {
+        this.setZoom(2);
+      }
+    },
+    getPointerDistance() {
+      const pointers = Object.values(this.activePointers);
+
+      if (pointers.length < 2) {
+        return 0;
+      }
+
+      return Math.hypot(
+        pointers[0].x - pointers[1].x,
+        pointers[0].y - pointers[1].y,
+      );
+    },
+    constrainPan() {
+      const stage = this.$refs.photoStage;
+
+      if (!stage || this.photoZoom <= 1) {
+        return;
+      }
+
+      const maxX = (stage.clientWidth * (this.photoZoom - 1)) / 2;
+      const maxY = (stage.clientHeight * (this.photoZoom - 1)) / 2;
+
+      this.photoPan = {
+        x: Math.max(-maxX, Math.min(maxX, this.photoPan.x)),
+        y: Math.max(-maxY, Math.min(maxY, this.photoPan.y)),
+      };
+    },
+    handlePointerDown(event) {
+      if (event.pointerType === "mouse" && event.button !== 0) {
+        return;
+      }
+
+      event.currentTarget.setPointerCapture(event.pointerId);
+      this.activePointers[event.pointerId] = { x: event.clientX, y: event.clientY };
+      const pointerCount = Object.keys(this.activePointers).length;
+
+      if (pointerCount === 2) {
+        this.pinchStartDistance = this.getPointerDistance();
+        this.pinchStartZoom = this.photoZoom;
+        this.isDragging = false;
+        return;
+      }
+
+      this.panStart = { x: event.clientX, y: event.clientY };
+      this.panOrigin = { ...this.photoPan };
+      this.swipeStart = { x: event.clientX, y: event.clientY };
+      this.isDragging = this.photoZoom > 1;
+    },
+    handlePointerMove(event) {
+      if (!this.activePointers[event.pointerId]) {
+        return;
+      }
+
+      this.activePointers[event.pointerId] = { x: event.clientX, y: event.clientY };
+      const pointerCount = Object.keys(this.activePointers).length;
+
+      if (pointerCount >= 2 && this.pinchStartDistance) {
+        event.preventDefault();
+        this.setZoom(this.pinchStartZoom * (this.getPointerDistance() / this.pinchStartDistance));
+        return;
+      }
+
+      if (this.photoZoom > 1 && this.isDragging) {
+        event.preventDefault();
+        this.photoPan = {
+          x: this.panOrigin.x + event.clientX - this.panStart.x,
+          y: this.panOrigin.y + event.clientY - this.panStart.y,
+        };
+        this.constrainPan();
+      }
+    },
+    handlePointerEnd(event) {
+      const swipeDistance = this.swipeStart
+        ? event.clientX - this.swipeStart.x
+        : 0;
+      const wasSinglePointer = Object.keys(this.activePointers).length === 1;
+
+      delete this.activePointers[event.pointerId];
+      this.isDragging = false;
+
+      if (Object.keys(this.activePointers).length === 1 && this.photoZoom > 1) {
+        const remainingPointer = Object.values(this.activePointers)[0];
+        this.panStart = { ...remainingPointer };
+        this.panOrigin = { ...this.photoPan };
+        this.isDragging = true;
+      }
+
+      if (wasSinglePointer && this.photoZoom === 1 && Math.abs(swipeDistance) > 56) {
+        if (swipeDistance > 0) {
+          this.showPreviousPhoto();
+        } else {
+          this.showNextPhoto();
+        }
+      }
+
+      this.swipeStart = null;
     },
     handleZoomWheel(event) {
       if (event.deltaY < 0) {
@@ -502,16 +641,39 @@ export default {
   z-index: 2000;
 }
 
-.biodata-lightbox__image {
+.biodata-lightbox__stage {
+  align-items: center;
+  display: flex;
   height: min(78vh, 52rem);
+  justify-content: center;
   max-width: min(82vw, 62rem);
+  overflow: hidden;
+  position: relative;
+  touch-action: none;
+  user-select: none;
+  width: min(82vw, 62rem);
+}
+
+.biodata-lightbox__stage.is-zoomed {
+  cursor: grab;
+}
+
+.biodata-lightbox__stage.is-dragging {
+  cursor: grabbing;
+}
+
+.biodata-lightbox__image {
+  display: block;
+  height: 100%;
   transition: transform 180ms ease;
-  width: auto;
+  width: 100%;
   will-change: transform;
 }
 
 .biodata-lightbox__image :deep(.image-loader__image) {
+  height: 100%;
   object-fit: contain;
+  width: 100%;
 }
 
 .biodata-lightbox__close,
@@ -617,12 +779,13 @@ export default {
   }
 
   .biodata-lightbox {
-    padding: 4.5rem 1rem 3.5rem;
+    padding: 3.75rem 0.75rem 4.75rem;
   }
 
-  .biodata-lightbox__image {
-    height: min(72vh, 40rem);
-    max-width: calc(100vw - 2rem);
+  .biodata-lightbox__stage {
+    height: calc(100dvh - 8.5rem);
+    max-width: 100%;
+    width: 100%;
   }
 
   .biodata-lightbox__control--previous {
@@ -640,7 +803,11 @@ export default {
 
   .biodata-lightbox__count {
     left: 0.75rem;
-    top: 1.5rem;
+    top: 1.25rem;
+  }
+
+  .biodata-lightbox__zoom {
+    bottom: 0.875rem;
   }
 }
 
