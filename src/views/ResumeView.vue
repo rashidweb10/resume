@@ -16,11 +16,12 @@
             <i class="fa-regular fa-code"></i></span
           >Experience
         </h2>
-        <div class="timeline">
+        <div class="timeline resume-timeline">
           <article
-            v-for="experience in experienceJourney"
+            v-for="(experience, index) in experienceJourney"
             :key="experience.id"
             class="timeline__item"
+            :style="{ '--item-index': index }"
           >
             <h5 class="title title--h4 timeline__title">
               {{ experience.title }}
@@ -39,11 +40,12 @@
             <i class="fa-solid fa-book-open"></i></span
           >Education
         </h2>
-        <div class="timeline">
+        <div class="timeline resume-timeline">
           <article
-            v-for="education in educationJourney"
+            v-for="(education, index) in educationJourney"
             :key="education.id"
             class="timeline__item"
+            :style="{ '--item-index': index }"
           >
             <h5 class="title title--h4 timeline__title">
               {{ education.title }}
@@ -73,12 +75,13 @@
 
     <!-- Coding Skills -->
     <h2 class="title title--h2 mt-3">Coding Skills</h2>
-    <div class="">
+    <div ref="skillsSection">
       <div class="row">
         <div
-          v-for="skill in myCodingSkillsList"
+          v-for="(skill, index) in myCodingSkillsList"
           :key="skill.id"
-          class="progress col-lg-4 col-12"
+          class="skill-progress progress col-lg-4 col-12"
+          :style="{ '--skill-index': index }"
         >
           <div class="progress-text">
             <span>{{ skill.title }}</span> {{ skill.percentage }}%
@@ -89,7 +92,10 @@
               :aria-valuenow="skill.percentage"
               aria-valuemin="0"
               aria-valuemax="100"
-              :style="{ width: skill.percentage + '%', 'z-index': 2 }"
+              :style="{
+                '--skill-fill': skillsAnimated ? Number(skill.percentage) / 100 : 0,
+                'z-index': 2,
+              }"
             ></span>
           </div>
         </div>
@@ -236,9 +242,15 @@ export default {
         { id: 3, title: "Urdu", percentage: "80" },
       ],
       myCertifications: null,
+      skillsAnimated: false,
+      skillsObserver: null,
     };
   },
   methods: {
+    startSkillAnimation() {
+      this.skillsAnimated = true;
+      this.skillsObserver?.disconnect();
+    },
     loadMyCertifications() {
       this.myCertifications = [
         {
@@ -281,6 +293,27 @@ export default {
   },
   mounted() {
     this.loadMyCertifications();
+    this.$nextTick(() => {
+      const skillsSection = this.$refs.skillsSection;
+
+      if (!("IntersectionObserver" in window) || !skillsSection) {
+        this.startSkillAnimation();
+        return;
+      }
+
+      this.skillsObserver = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            this.startSkillAnimation();
+          }
+        },
+        { threshold: 0.2 }
+      );
+      this.skillsObserver.observe(skillsSection);
+    });
+  },
+  beforeUnmount() {
+    this.skillsObserver?.disconnect();
   },
   components: {
     NavigationMain,
@@ -315,5 +348,75 @@ export default {
 
 .role-list {
   padding-left: 0px;
+}
+
+.resume-timeline {
+  margin-top: 1.5rem;
+}
+
+.resume-timeline .timeline__item {
+  border-left-color: rgba(255, 219, 110, 0.2);
+  padding-bottom: 1.25rem;
+  animation: timeline-item-enter 460ms both cubic-bezier(0.2, 0.8, 0.2, 1);
+  animation-delay: calc(var(--item-index) * 80ms);
+}
+
+.resume-timeline .timeline__item::before {
+  background: #1e1f21;
+  border: 2px solid #ffdb6e;
+  box-shadow: 0 0 0 4px rgba(255, 219, 110, 0.09);
+  height: 0.75rem;
+  left: -0.4375rem;
+  top: -0.0625rem;
+  width: 0.75rem;
+}
+
+.resume-timeline .timeline__item:hover::before {
+  background: #ffdb6e;
+  box-shadow: 0 0 0 5px rgba(255, 219, 110, 0.16);
+}
+
+.resume-timeline .timeline__title {
+  top: -0.25rem;
+}
+
+.skill-progress .progress-bar {
+  background: #303236;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.24);
+  height: 0.625rem;
+  overflow: hidden;
+}
+
+.skill-progress .progress-bar span {
+  box-shadow: 0 0 12px rgba(255, 219, 110, 0.24);
+  height: 100%;
+  transform: scaleX(var(--skill-fill, 0));
+  transform-origin: left center;
+  transition: transform 680ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: calc(var(--skill-index) * 30ms);
+  width: 100%;
+  will-change: transform;
+}
+
+@keyframes timeline-item-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .resume-timeline .timeline__item {
+    animation: none;
+  }
+
+  .skill-progress .progress-bar span {
+    transition: none;
+  }
 }
 </style>
