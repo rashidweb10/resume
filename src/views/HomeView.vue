@@ -1,123 +1,137 @@
 <template>
   <div class="box-outer">
-    <!-- Menu -->
     <div class="nav-container">
       <NavigationMain></NavigationMain>
     </div>
 
-    <!-- About Me -->
     <BreadcrumbInner :titleData="'About Me'"></BreadcrumbInner>
 
     <div>
       <p>
-        Hello! I'm Muhammed Rashid, a Full-Stack Developer based in Mumbai, India, with over {{experienceYears}} years of experience in developing dynamic and user-focused web applications.
+        Hello, I'm Muhammed Rashid, a web application developer based in Mumbai
+        with over {{ experienceYears }} years of experience building reliable,
+        user-focused digital products.
       </p>
       <p>
-        Currently, I’m working at NexGeno Technology Pvt. Ltd., where I’ve successfully developed 90+ web applications including E-commerce, CMS, CRM, HRMS, LMS, WordPress, and custom-built solutions — managing both frontend and backend development with efficiency and precision.
+        I take projects from early planning and technical decisions through
+        execution, development, release, and ongoing improvement. My work spans
+        custom applications, CMS platforms, CRMs, e-commerce stores, client
+        portals, and learning management systems, with a focus on practical
+        solutions that make day-to-day work easier.
       </p>
 
-      <h2 class="title title--h2 mt-3">What I'm Doing</h2>
+      <h2 class="title title--h2 mt-3">How I Contribute</h2>
 
       <div class="row">
-        <!-- Case Item -->
-        <div v-for="row in myJobs" :key="row.id" class="col-12 col-lg-6">
-          <div class="case-item box box--s2 box-inner">
-            <ImageLoader
-              class="case-item__icon"
-              variant="icon"
-              :src="row.image"
-              :alt="row.name"
-            />
+        <div v-for="service in services" :key="service.id" class="col-12 col-lg-6">
+          <article class="case-item service-card box box--s2 box-inner">
+            <span class="case-item__icon service-icon" aria-hidden="true">
+              <i :class="service.icon"></i>
+            </span>
             <div>
-              <h3 class="title title--h3" style="margin-top: -4px">
-                {{ row.name }}
+              <h3 class="title title--h3 service-card__title">
+                {{ service.name }}
               </h3>
               <p class="case-item__caption">
-                {{ row.content }}
+                {{ service.content }}
               </p>
             </div>
-          </div>
+          </article>
         </div>
       </div>
-
-      <!--<p style="display: flex;" v-for="point in AboutMePoints" :key="point.id">
-        <i style="position: relative;top: 4px; margin-right: 4px;" class="fa-solid fa-check"></i> {{ point.content }}
-      </p>-->
     </div>
   </div>
 </template>
-  
-  <script>
+
+<script>
 import NavigationMain from "../components/navigation/NavigationMain.vue";
 import BreadcrumbInner from "../components/breadcrumb/BreadcrumbInner.vue";
-import ImageLoader from "../components/ImageLoader.vue";
 
 export default {
+  components: {
+    NavigationMain,
+    BreadcrumbInner,
+  },
   data() {
-    const experienceYears = new Date().getFullYear() - 2018;
     return {
-      experienceYears,
-      myJobs: null,
-      AboutMePoints: [
+      experienceYears: new Date().getFullYear() - 2018,
+      services: [
         {
-          id: "1",
-          content: "I'm a fullstack developer with 4+ years of experience.",
+          id: 1,
+          name: "Solution Planning",
+          icon: "fa-solid fa-compass-drafting",
+          content:
+            "Turn business goals into clear scopes, technical plans, and achievable delivery phases.",
         },
         {
-          id: "2",
+          id: 2,
+          name: "Application Development",
+          icon: "fa-solid fa-code",
           content:
-            "Skilled in Laravel, Codeignitor, PHP, MySQL, jQuery, Vue.js, Ajax, Rest API's, wordpress, JSON, javaScript, Git, Html5, Css3, Bootstap5.",
+            "Build maintainable, user-focused applications across frontend workflows and backend systems.",
         },
         {
-          id: "3",
+          id: 3,
+          name: "Problem Solving",
+          icon: "fa-solid fa-screwdriver-wrench",
           content:
-            "Developed / Work almost 70+ websites of frontend & backend including Dynamic websites, E-commerce, CMS, CRM, HRMS, LMS, Static websites & Custom based websites.",
-        },
-        { id: "4", content: "Integrated almost 30+ API's." },
-        { id: "5", content: "Bugs fixing skills in real-time projects." },
-        { id: "6", content: "Achived 3+ awards & certifications." },
-        {
-          id: "7",
-          content:
-            "I always try to be up-to-date with industry-standard technologies.",
+            "Diagnose bugs, resolve production issues, and improve reliability across the application.",
         },
         {
-          id: "8",
+          id: 4,
+          name: "Performance Optimization",
+          icon: "fa-solid fa-gauge-high",
           content:
-            "Currently working as a fullstack developer with Mak Enterprises.",
+            "Improve speed, database usage, and core workflows so products stay responsive as they grow.",
+        },
+        {
+          id: 5,
+          name: "Team Leadership",
+          icon: "fa-solid fa-people-group",
+          content:
+            "Support delivery with clear priorities, technical guidance, and thoughtful collaboration.",
+        },
+        {
+          id: 6,
+          name: "Business Platforms",
+          icon: "fa-solid fa-layer-group",
+          content:
+            "Deliver custom applications, CMS, CRM, e-commerce, portal, and LMS experiences.",
         },
       ],
     };
   },
-  methods: {
-    listJobs() {
-      this.myJobs = [
-        {
-          id: 1,
-          name: "Web Development",
-          image: "/resume/img/skills/icon-dev.svg",
-          content:
-            "High-quality development of sites at the professional level.",
-        },
-        {
-          id: 2,
-          name: "Web Designing",
-          image: "/resume/img/skills/icon-design.svg",
-          content:
-            "The most modern and high-quality design made at a professional level.",
-        },
-      ];
-    },
-  },
-  mounted() {
-    this.listJobs();
-  },
-  components: {
-    NavigationMain,
-    BreadcrumbInner,
-    ImageLoader,
-  },
 };
 </script>
-  
-  
+
+<style scoped>
+.service-card {
+  min-height: 9.25rem;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.service-card:hover {
+  box-shadow: 0 0.75rem 2rem rgba(0, 0, 0, 0.18);
+  transform: translateY(-0.1875rem);
+}
+
+.service-card__title {
+  margin-top: -0.25rem;
+}
+
+.service-icon {
+  align-items: center;
+  color: #ffdb6e;
+  display: inline-flex;
+  flex: 0 0 2.5rem;
+  font-size: 1.5rem;
+  justify-content: center;
+  width: 2.5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .service-card {
+    transition: none;
+  }
+}
+</style>
