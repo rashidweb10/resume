@@ -144,12 +144,6 @@ export default {
               href="https://github.com/rashidweb10"
               ><i class="fa-brands fa-github"></i
             ></a>
-            <!--<a
-              target="_blank"
-              class="social__link"
-              href="https://www.instagram.com/rashidweb10/"
-              ><i class="fa-brands fa-instagram"></i
-            ></a>-->
             <a
               target="_blank"
               class="social__link"
@@ -161,6 +155,12 @@ export default {
               class="social__link"
               href="https://t.me/rashidweb/"
               ><i class="fa-brands fa-telegram"></i
+            ></a>
+            <a
+              target="_blank"
+              class="social__link"
+              href="https://www.instagram.com/_rashidweb/"
+              ><i class="fa-brands fa-instagram"></i
             ></a>
           </div>
         </div>
