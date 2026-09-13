@@ -230,6 +230,11 @@ export default {
           alt: "Muhammad Rashid Ansari full-length portrait",
           ratio: "9 / 16",
         },
+        {
+          src: "/resume/img/bio/IMG_20260913_204520.jpg.jpeg",
+          alt: "Muhammad Rashid Ansari with family",
+          ratio: "4 / 3",
+        },
       ],
     };
   },
