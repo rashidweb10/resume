@@ -39,7 +39,7 @@ export default {
             <figure class="avatar-box">
               <ImageLoader
                 variant="avatar"
-                src="/resume/img/Muhammed_rashid.jpg"
+                src="/resume/img/Muhammed_rashid_1.jpeg"
                 alt="Muhammed Rashid"
                 loading="eager"
               />
