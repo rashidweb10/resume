@@ -52,12 +52,22 @@
 .image-loader--thumbnail,
 .image-loader--project {
   aspect-ratio: 16 / 10;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0.75rem;
   width: 100%;
 }
 
-.image-loader--thumbnail .image-loader__image,
-.image-loader--project .image-loader__image {
+.image-loader--project.is-loaded {
+  aspect-ratio: auto;
+}
+
+.image-loader--thumbnail .image-loader__image {
   object-fit: cover;
+}
+
+.image-loader--project .image-loader__image {
+  height: auto;
+  object-fit: contain;
 }
 
 .image-loader--icon {
