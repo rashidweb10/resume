@@ -224,7 +224,7 @@ export default {
         },
         { label: "Income", value: "Rs. 45,000 to Rs. 50,000 per month" },
         { label: "Namaz", value: "I mostly try to be regular with prayer" },
-        { label: "Maslak", value: "Sunni, Barelvi" },
+        { label: "Maslak", value: "Sunni, Barelvi, We believe in Fatiha, Dargah and Milad Shareef" },
         { label: "Bad Habits", value: "No cigarette, No gutka, or similar habits" },
         { label: "Nature", value: "Simple Men" },
         { label: "Health", value: "No health issues" },
