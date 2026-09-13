@@ -528,6 +528,7 @@ export default {
   position: absolute;
   transition: background 180ms ease, color 180ms ease;
   width: 2.75rem;
+  z-index: 2;
 }
 
 .biodata-lightbox__close:hover,
@@ -559,6 +560,7 @@ export default {
   margin: 0;
   position: absolute;
   top: 1.875rem;
+  z-index: 2;
 }
 
 .biodata-lightbox__zoom {
@@ -568,6 +570,7 @@ export default {
   left: 50%;
   position: absolute;
   transform: translateX(-50%);
+  z-index: 2;
 }
 
 .biodata-lightbox__zoom .biodata-lightbox__control {
