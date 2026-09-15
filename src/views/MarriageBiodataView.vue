@@ -31,8 +31,7 @@
           my mother is a homemaker. I am the eldest among my siblings.
         </p>
         <p>
-          I have two brothers who run a bag-manufacturing business together. I
-          also have four sisters: one is married, one will be married soon,
+          I have two brothers & they have bag wholesales & manufacturing business. I have four sisters: one is married, one will be married soon
           InshaAllah, and two are currently studying.
         </p>
         <p>
