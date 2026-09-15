@@ -8,7 +8,7 @@
       <p class="biodata-page__eyebrow">Marriage Biodata</p>
       <h1 class="title title--h1">Muhammad rashid ansari</h1>
       <p class="biodata-page__intro">
-        Assalamu Alaikum.<br>This biodata has been prepared with sincerity; the
+        Assalamu Alaikum<br>This biodata has been prepared by me with sincerity<br>The
         information below is accurate.
       </p>
     </header>
