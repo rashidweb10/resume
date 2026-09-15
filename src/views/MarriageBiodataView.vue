@@ -60,6 +60,7 @@
         <p>
           We are looking for a simple, understanding and family-oriented girl who observes pardah, respects family values and can manage the home well. More than anything, we hope both of us can understand, respect each other and spend a peaceful life together.
         </p>
+        <p><b>Note : </b> We are comfortable having the marriage in either UP or Mumbai.</p>
       </div>
     </section>
 
@@ -224,7 +225,7 @@ export default {
         },
         { label: "Income", value: "Rs. 45,000 to Rs. 50,000 per month" },
         { label: "Namaz", value: "I mostly try to be regular with prayer" },
-        { label: "Maslak", value: "Sunni, Barelvi, We believe in Fatiha, Dargah and Milad Shareef" },
+        { label: "Maslak", value: "Sunni, Barelvi, We do Fatiha, go to Dargahs, and celebrate Milad Shareef" },
         { label: "Bad Habits", value: "No cigarette, No gutka, or similar habits" },
         { label: "Nature", value: "Simple Men" },
         { label: "Health", value: "No health issues" },
