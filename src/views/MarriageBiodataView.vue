@@ -223,7 +223,7 @@ export default {
           label: "Profession",
           value: "Web Application Developer at NexGeno Technology and Freelancer",
         },
-        { label: "Income", value: "Rs. 45,000 to Rs. 50,000 per month" },
+        { label: "Income", value: "Rs. ₹45,000 to Rs. ₹50,000 per month" },
         { label: "Namaz", value: "I mostly try to be regular with prayer" },
         { label: "Maslak", value: "Sunni, Barelvi, We do Fatiha, go to Dargahs, and celebrate Milad Shareef" },
         { label: "Bad Habits", value: "No cigarette, No gutka, or similar habits" },
