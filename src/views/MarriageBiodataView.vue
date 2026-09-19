@@ -7,10 +7,13 @@
     <header class="biodata-page__header">
       <p class="biodata-page__eyebrow">Marriage Biodata</p>
       <h1 class="title title--h1">Muhammad rashid ansari</h1>
+      <p class="biodata-page__intro">Assalamu Alaikum</p>
       <p class="biodata-page__intro">
-        Assalamu Alaikum<br>This biodata has been prepared by me with sincerity<br>The
+        This biodata has been prepared by me with sincerity<br>The
         information below is accurate.
-        
+      </p>
+      <p class="biodata-page__intro">
+        <b>Note:</b> Rishte se mutalliq koi bhi baat cheet aur faisle mere Ammi Abbu karenge.
       </p>
     </header>
 
@@ -506,6 +509,10 @@ export default {
 .biodata-page__intro {
   margin-bottom: 0;
   max-width: 43rem;
+}
+
+.biodata-page__intro + .biodata-page__intro {
+  margin-top: 1rem;
 }
 
 .biodata-section {
