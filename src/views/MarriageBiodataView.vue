@@ -71,6 +71,10 @@
           v-for="(photo, index) in photos"
           :key="photo.src"
           class="biodata-gallery__item"
+          :class="{
+            'biodata-gallery__item--full-width': photo.fullWidth,
+            'biodata-gallery__item--blurred': photo.blurred,
+          }"
           :style="{ '--photo-ratio': photo.ratio }"
           type="button"
           :aria-label="`Open photo ${index + 1} of ${photos.length}`"
@@ -133,6 +137,7 @@
       >
         <ImageLoader
           class="biodata-lightbox__image"
+          :class="{ 'biodata-lightbox__image--blurred': activePhoto.blurred }"
           variant="lightbox"
           :src="activePhoto.src"
           :alt="activePhoto.alt"
@@ -252,11 +257,13 @@ export default {
           alt: "Muhammad rashid Ansari full-length portrait",
           ratio: "2 / 3",
         },
-        // {
-        //   src: "/resume/img/bio/IMG_20260913_204520.jpg.jpeg",
-        //   alt: "Muhammad rashid Ansari with family",
-        //   ratio: "1 / 1",
-        // },
+        {
+          src: "/resume/img/bio/IMG_20260913_204520.jpg.jpeg",
+          alt: "Muhammad rashid Ansari with family",
+          ratio: "3 / 2",
+          fullWidth: true,
+          blurred: true,
+        },
       ],
     };
   },
@@ -601,6 +608,10 @@ export default {
   transform: translateY(-0.1875rem);
 }
 
+.biodata-gallery__item--full-width {
+  column-span: all;
+}
+
 .biodata-gallery__image {
   height: 100%;
   width: 100%;
@@ -608,6 +619,12 @@ export default {
 
 .biodata-gallery__image :deep(.image-loader__image) {
   object-fit: cover;
+}
+
+.biodata-gallery__item--blurred .biodata-gallery__image :deep(.image-loader__image),
+.biodata-lightbox__image--blurred :deep(.image-loader__image) {
+  filter: blur(7px);
+  transform: scale(1.04);
 }
 
 .biodata-gallery__expand {
