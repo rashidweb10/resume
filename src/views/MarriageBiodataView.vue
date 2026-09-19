@@ -55,7 +55,7 @@
     </section>
 
     <section class="biodata-section" aria-labelledby="looking-for">
-      <h2 id="looking-for" class="title title--h2">What We Are Looking For</h2>
+      <h2 id="looking-for" class="title title--h2">We Are Looking For</h2>
       <div class="biodata-copy">
         <p>
           We are looking for a simple, understanding and family-oriented girl who observes pardah, respects family values and can manage the home well. More than anything, we hope both of us can understand, respect each other and spend a peaceful life together.
