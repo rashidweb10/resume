@@ -221,10 +221,10 @@ export default {
         { label: "Education", value: "BSc IT, University of Mumbai" },
         {
           label: "Profession",
-          value: "Web Application Developer at NexGeno Technology and Freelancer",
+          value: "Web Application Developer and Freelancer",
         },
         { label: "Income", value: "Rs. ₹45,000 to Rs. ₹50,000 per month" },
-        { label: "Namaz", value: "I mostly try to be regular with prayer" },
+        { label: "Namaz", value: "I mostly try to be regular with prayers" },
         { label: "Maslak", value: "Sunni, Barelvi, We do Fatiha, go to Dargahs, and celebrate Milad Shareef" },
         { label: "Bad Habits", value: "No cigarette, No gutka, or similar habits" },
         { label: "Nature", value: "Simple Men" },
@@ -238,25 +238,25 @@ export default {
           ratio: "1 / 1",
         },
         {
+          src: "/resume/img/bio/Screenshot_2022-10-01-11-55-52-800_com.whatsapp.w4b.jpg.jpeg",
+          alt: "Muhammad rashid Ansari outdoors",
+          ratio: "2 / 3",
+        },        
+        {
           src: "/resume/img/bio/IMG_20260822_003108_154.jpg.jpeg",
           alt: "Muhammad rashid Ansari side portrait",
           ratio: "1 / 1",
         },
         {
-          src: "/resume/img/bio/Screenshot_2022-10-01-11-55-52-800_com.whatsapp.w4b.jpg.jpeg",
-          alt: "Muhammad rashid Ansari outdoors",
-          ratio: "3 / 4",
-        },
-        {
           src: "/resume/img/bio/Screenshot_2025-08-18-19-56-24-65_96b26121e545231a3c569311a54cda96.jpg.jpeg",
           alt: "Muhammad rashid Ansari full-length portrait",
-          ratio: "9 / 16",
+          ratio: "2 / 3",
         },
-        {
-          src: "/resume/img/bio/IMG_20260913_204520.jpg.jpeg",
-          alt: "Muhammad rashid Ansari with family",
-          ratio: "4 / 3",
-        },
+        // {
+        //   src: "/resume/img/bio/IMG_20260913_204520.jpg.jpeg",
+        //   alt: "Muhammad rashid Ansari with family",
+        //   ratio: "1 / 1",
+        // },
       ],
     };
   },
