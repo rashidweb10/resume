@@ -50,8 +50,8 @@
     <section class="biodata-section" aria-labelledby="financial-status">
       <h2 id="financial-status" class="title title--h2">Financial Information</h2>
       <p class="biodata-copy">
-        We belong to a middle-class family that values simplicity,
-        honesty, and mutual respect. Alhamdulillah, our family has a home and
+        We belong to a middle class family that values simplicity,
+        and honesty. Alhamdulillah, our family has a home and
         shop in Mumbai, along with a home in our village. Any further financial
         details can be shared respectfully by my father at the appropriate time.
       </p>
