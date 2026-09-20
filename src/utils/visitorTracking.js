@@ -1,6 +1,7 @@
 const TRACKING_COOKIE = "visitor_tracking";
 const TRACKING_TTL_SECONDS = 30 * 60;
 const TRACKING_ENDPOINT = import.meta.env.VITE_TRACKING_ENDPOINT || "https://lavish.gnbags.in/api/track.php";
+const TRACKING_TIMEOUT_MS = 5000;
 
 let trackingRequest;
 
@@ -101,35 +102,43 @@ async function buildTrackingPayload() {
 
 async function sendTrackingRequest() {
   const payload = await buildTrackingPayload();
-  const response = await fetch(TRACKING_ENDPOINT, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    credentials: "same-origin",
-    body: JSON.stringify(payload),
-  });
+  const controller = new AbortController();
+  const timeout = window.setTimeout(() => controller.abort(), TRACKING_TIMEOUT_MS);
 
-  if (!response.ok) {
-    throw new Error(`Visitor tracking failed with status ${response.status}`);
-  }
+  try {
+    const response = await fetch(TRACKING_ENDPOINT, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      credentials: "same-origin",
+      body: JSON.stringify(payload),
+      signal: controller.signal,
+    });
 
-  const responseText = await response.text();
-  if (responseText) {
-    try {
-      const result = JSON.parse(responseText);
-      if (result.success === false || result.status === "error") {
-        throw new Error("Visitor tracking API returned an error");
-      }
-    } catch (error) {
-      if (error instanceof SyntaxError) {
-        return payload;
-      }
-      throw error;
+    if (!response.ok) {
+      throw new Error(`Visitor tracking failed with status ${response.status}`);
     }
-  }
 
-  return payload;
+    const responseText = await response.text();
+    if (responseText) {
+      try {
+        const result = JSON.parse(responseText);
+        if (result.success === false || result.status === "error") {
+          throw new Error("Visitor tracking API returned an error");
+        }
+      } catch (error) {
+        if (error instanceof SyntaxError) {
+          return payload;
+        }
+        throw error;
+      }
+    }
+
+    return payload;
+  } finally {
+    window.clearTimeout(timeout);
+  }
 }
 
 export function trackVisitor() {
